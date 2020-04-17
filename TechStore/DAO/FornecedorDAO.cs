@@ -9,62 +9,129 @@ using TechStore.Model;
 
 namespace TechStore.DAO
 {
-    class FornecedorDAO
+    class FornecedorDAO : Conexao
     {
-        public Fornecedor insert(Fornecedor fornecedor)
+        SqlCommand comando = null;
+        public void Salvar(Fornecedor fornecedor)
         {
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT INTO Fornecedor(nome, cnpj, endereco, numero, cep, complemento, bairro, telefone, cidade, estado, insc_estadual, insc_municipal, email) values (@nome, @cnpj, @endereco, @numero, @cep, @complemento, @bairro, @telefone, @cidade, @estado, @insc_estadual, @insc_municipal, @email)";
-            cmd.Parameters.AddWithValue("@nome", fornecedor.Nome);
-            cmd.Parameters.AddWithValue("@cnpj", fornecedor.Cnpj);
-            cmd.Parameters.AddWithValue("@endereco", fornecedor.Endereco);
-            cmd.Parameters.AddWithValue("@numero", fornecedor.Numero);
-            cmd.Parameters.AddWithValue("@cep", fornecedor.Cep);
-            cmd.Parameters.AddWithValue("@complemento", fornecedor.Complemento);
-            cmd.Parameters.AddWithValue("@bairro", fornecedor.Bairro);
-            cmd.Parameters.AddWithValue("@telefone", fornecedor.Telefone);
-            cmd.Parameters.AddWithValue("@cidade", fornecedor.Cidade);
-            cmd.Parameters.AddWithValue("@estado", fornecedor.Estado);
-            cmd.Parameters.AddWithValue("@insc_estadual", fornecedor.InscEstadual);
-            cmd.Parameters.AddWithValue("@insc_municipal", fornecedor.InscMunicipal);
-            cmd.Parameters.AddWithValue("@email", fornecedor.Email);
+            try
+            {
+                Conectar();
 
-            if (Conexao.CRUD(cmd))
-                return fornecedor;
-            return null;
+                comando = new SqlCommand("INSERT INTO Fornecedor(nome, cnpj, endereco, numero, cep, complemento, bairro, telefone, cidade, estado, insc_estadual, insc_municipal, email) values(@nome, @cnpj, @endereco, @numero, @cep, @complemento, @bairro, @telefone, @cidade, @estado, @insc_estadual, @insc_municipal, @email)", conexao);
+
+                comando.Parameters.AddWithValue("@nome", fornecedor.Nome);
+                comando.Parameters.AddWithValue("@cnpj", fornecedor.Cnpj);
+                comando.Parameters.AddWithValue("@endereco", fornecedor.Endereco);
+                comando.Parameters.AddWithValue("@numero", fornecedor.Numero);
+                comando.Parameters.AddWithValue("@cep", fornecedor.Cep);
+                comando.Parameters.AddWithValue("@complemento", fornecedor.Complemento);
+                comando.Parameters.AddWithValue("@bairro", fornecedor.Bairro);
+                comando.Parameters.AddWithValue("@telefone", fornecedor.Telefone);
+                comando.Parameters.AddWithValue("@cidade", fornecedor.Cidade);
+                comando.Parameters.AddWithValue("@estado", fornecedor.Estado);
+                comando.Parameters.AddWithValue("@insc_estadual", fornecedor.InscEstadual);
+                comando.Parameters.AddWithValue("@insc_municipal", fornecedor.InscMunicipal);
+                comando.Parameters.AddWithValue("@email", fornecedor.Email);
+
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Desconectar();
+            }
         }
 
-        public Fornecedor update(Fornecedor fornecedor)
+        public void Editar(Fornecedor fornecedor)
         {
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "UPDATE Fornecedor set nome = @nome, cnpj = @cnpj, endereco = @endereco, numero = @numero, cep = @cep, complemento = @complemento, bairro = @bairro, telefone = @telefone, cidade = @cidade, estado = @estado, insc_estadual = @insc_estadual, insc_municipal = @insc_municipal, email = @email";
-            cmd.Parameters.AddWithValue("@nome", fornecedor.Nome);
-            cmd.Parameters.AddWithValue("@cnpj", fornecedor.Cnpj);
-            cmd.Parameters.AddWithValue("@endereco", fornecedor.Endereco);
-            cmd.Parameters.AddWithValue("@numero", fornecedor.Numero);
-            cmd.Parameters.AddWithValue("@cep", fornecedor.Cep);
-            cmd.Parameters.AddWithValue("@complemento", fornecedor.Complemento);
-            cmd.Parameters.AddWithValue("@bairro", fornecedor.Bairro);
-            cmd.Parameters.AddWithValue("@telefone", fornecedor.Telefone);
-            cmd.Parameters.AddWithValue("@cidade", fornecedor.Cidade);
-            cmd.Parameters.AddWithValue("@estado", fornecedor.Estado);
-            cmd.Parameters.AddWithValue("@insc_estadual", fornecedor.InscEstadual);
-            cmd.Parameters.AddWithValue("@insc_municipal", fornecedor.InscMunicipal);
-            cmd.Parameters.AddWithValue("@email", fornecedor.Email);
-            if (Conexao.CRUD(cmd))
-                return fornecedor;
-            return null;
+            try
+            {
+                Conectar();
+
+                comando = new SqlCommand("UPDATE Fornecedor set nome = @nome, cnpj = @cnpj, endereco = @endereco, numero = @numero, cep = @cep, complemento = @complemento, bairro = @bairro, telefone = @telefone, cidade = @cidade, estado = @estado, insc_estadual = @insc_estadual, insc_municipal = @insc_municipal, email = @email WHERE idfornecedor = @id", conexao);
+
+                comando.Parameters.AddWithValue("@id", fornecedor.Id);
+                comando.Parameters.AddWithValue("@nome", fornecedor.Nome);
+                comando.Parameters.AddWithValue("@cnpj", fornecedor.Cnpj);
+                comando.Parameters.AddWithValue("@endereco", fornecedor.Endereco);
+                comando.Parameters.AddWithValue("@numero", fornecedor.Numero);
+                comando.Parameters.AddWithValue("@cep", fornecedor.Cep);
+                comando.Parameters.AddWithValue("@complemento", fornecedor.Complemento);
+                comando.Parameters.AddWithValue("@bairro", fornecedor.Bairro);
+                comando.Parameters.AddWithValue("@telefone", fornecedor.Telefone);
+                comando.Parameters.AddWithValue("@cidade", fornecedor.Cidade);
+                comando.Parameters.AddWithValue("@estado", fornecedor.Estado);
+                comando.Parameters.AddWithValue("@insc_estadual", fornecedor.InscEstadual);
+                comando.Parameters.AddWithValue("@insc_municipal", fornecedor.InscMunicipal);
+                comando.Parameters.AddWithValue("@email", fornecedor.Email);
+
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception erro)
+            {
+
+                throw erro;
+            }
+            finally
+            {
+                Desconectar();
+            }
         }
 
-        public static DataTable returnDataSource()
+        public void Excluir(Fornecedor fornecedor)
         {
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT * FROM Fornecedor";
-            SqlDataReader dr = Conexao.selecionar(cmd);
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd.CommandText, Conexao.conectar());
-            da.Fill(dt);
-            return dt;
+            try
+            {
+                Conectar();
+
+                comando = new SqlCommand("DELETE FROM Fornecedor WHERE idfornecedor = @id", conexao);
+
+                comando.Parameters.AddWithValue("@id", fornecedor.Id);
+
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception erro)
+            {
+
+                throw erro;
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
+        public DataTable Listar()
+        {
+            try
+            {
+                Conectar();
+
+                DataTable dataTable = new DataTable();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
+
+                comando = new SqlCommand("SELECT * FROM Fornecedor ORDER BY nome", conexao);
+
+                sqlDataAdapter.SelectCommand = comando;
+
+                sqlDataAdapter.Fill(dataTable);
+
+                return dataTable;
+            }
+            catch (Exception erro)
+            {
+
+                throw erro;
+            }
+            finally
+            {
+                Desconectar();
+            }
         }
     }
 }

@@ -24,5 +24,12 @@ namespace TechStore.View
             tbDescricao.Text = "";
             tbPreco.Text = "";
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmCadastrarCategoria cadastrarCategoria = new frmCadastrarCategoria();
+            cadastrarCategoria.ShowDialog();
+            cadastrarCategoria.Dispose();
+        }
     }
 }

@@ -1,69 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Data.SqlClient;
 
-namespace TechStore
+namespace TechStore.DAO
 {
-    class Conexao
+    public class Conexao
     {
-        public static SqlConnection conectar()
-        {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = "Data Source=DESKTOP-DP6GSUO\\SQLEXPRESS;Initial Catalog=TechStore;Integrated Security=True";
-            if (con.State == System.Data.ConnectionState.Closed)
-            {
-                con.Open();
-            }
-            return con;
-        }
+        string conecta = "Data Source=DESKTOP-DP6GSUO\\SQLEXPRESS;Initial Catalog=TechStore;Integrated Security=True";
+        protected SqlConnection conexao = null;
 
-        public static Boolean CRUD(SqlCommand cmd)
+        //Método para conectar no banco de dados
+        public void Conectar()
         {
             try
             {
-                SqlConnection con = conectar();
-                cmd.Connection = con;
-                cmd.ExecuteNonQuery();
-                con.Close();
-                return true;
+                conexao = new SqlConnection(conecta);
+                conexao.Open();
             }
-            catch (Exception ex)
+            catch (Exception erro)
             {
-                MessageBox.Show("Error " + ex);
-                return false;
+
+                throw erro;
             }
         }
 
-        public static SqlDataReader selecionar(SqlCommand cmd)
+        //Método para desconectar do banco de dados
+        public void Desconectar()
         {
             try
             {
-                SqlConnection con = conectar();
-                cmd.Connection = con;
-                SqlDataReader dr = cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
-                return dr;
+                conexao = new SqlConnection(conecta);
+                conexao.Close();
             }
-            catch (Exception ex)
+            catch (Exception erro)
             {
-                MessageBox.Show("Error " + ex);
-                return null;
-            }
-        }
 
-        internal static object pesquisar(string v)
-        {
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = v;
-            SqlDataReader dr = Conexao.selecionar(cmd);
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd.CommandText, Conexao.conectar());
-            da.Fill(dt);
-            return dt;
+                throw erro;
+            }
         }
     }
 }

@@ -120,9 +120,9 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAA5SURBVDhPY4ibU/afXMwAAiDGrgd7Scb0MYCQ3HA0AMQmhPEagI4JyY0EA/Bh6hpALgYbQBlg
-        YAAAAtSs1lk1fUQAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAADlJREFUOE9j
+        iJtT9p9czAACIMauB3tJxvQxgJDccDQAxCaE8RqAjgnJjQQD8GHqGkAuBhtAGWBgAAAC1KzWWTV9RAAA
+        AABJRU5ErkJggg==
 </value>
   </data>
   <data name="btnBuscarProduto.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

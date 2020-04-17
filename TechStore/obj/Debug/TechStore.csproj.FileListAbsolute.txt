@@ -18,3 +18,4 @@ C:\Users\jhemysbarros\source\repos\TechStore\TechStore\obj\Debug\TechStore.cspro
 C:\Users\jhemysbarros\source\repos\TechStore\TechStore\obj\Debug\TechStore.csproj.CoreCompileInputs.cache
 C:\Users\jhemysbarros\source\repos\TechStore\TechStore\obj\Debug\TechStore.exe
 C:\Users\jhemysbarros\source\repos\TechStore\TechStore\obj\Debug\TechStore.pdb
+C:\Users\jhemysbarros\source\repos\TechStore\TechStore\obj\Debug\TechStore.csprojAssemblyReference.cache

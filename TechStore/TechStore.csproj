@@ -51,8 +51,6 @@
     <Compile Include="Controller\FuncionarioController.cs" />
     <Compile Include="DAO\CategoriaDAO.cs" />
     <Compile Include="DAO\Conexao.cs" />
-    <Compile Include="DAO\Conexao2.cs" />
-    <Compile Include="DAO\DadosDaConexao.cs" />
     <Compile Include="DAO\FornecedorDAO.cs" />
     <Compile Include="DAO\FuncionarioDAO.cs" />
     <Compile Include="Model\Categoria.cs" />

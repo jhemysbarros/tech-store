@@ -10,7 +10,7 @@ using System.Data;
 namespace TechStore.DAO
 {
 
-    class CategoriaDAO : Conexao2
+    class CategoriaDAO : Conexao
     {
         SqlCommand comando = null;
         public void Salvar(Categoria categoria)

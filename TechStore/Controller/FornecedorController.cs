@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,14 +11,59 @@ namespace TechStore.Controller
 {
     class FornecedorController
     {
-        public Fornecedor CadastrarFornecedor(Fornecedor obj)
+        FornecedorDAO fornecedorDAO = new FornecedorDAO();
+        public void Salvar(Fornecedor fornecedor)
         {
-            FornecedorDAO fornecedorDAO = new FornecedorDAO();
-            if (obj.Id != 0)
+            try
             {
-                return fornecedorDAO.update(obj);
+                fornecedorDAO.Salvar(fornecedor);
             }
-            return fornecedorDAO.insert(obj);
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+        }
+
+        public void Editar(Fornecedor fornecedor)
+        {
+            try
+            {
+                fornecedorDAO.Editar(fornecedor);
+            }
+            catch (Exception erro)
+            {
+
+                throw erro;
+            }
+        }
+
+        public void Excluir(Fornecedor fornecedor)
+        {
+            try
+            {
+                fornecedorDAO.Excluir(fornecedor);
+            }
+            catch (Exception erro)
+            {
+
+                throw erro;
+            }
+        }
+
+        public DataTable Listar()
+        {
+            try
+            {
+                DataTable dataTable = new DataTable();
+
+                dataTable = fornecedorDAO.Listar();
+
+                return dataTable;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
         }
     }
 }

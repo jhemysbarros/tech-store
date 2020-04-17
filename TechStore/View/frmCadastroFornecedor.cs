@@ -19,73 +19,142 @@ namespace TechStore.View
         public frmCadastroFornecedor()
         {
             InitializeComponent();
+            Listar();
         }
 
-        private void Fornecedor()
+        private void Salvar(Fornecedor fornecedor)
         {
-            Fornecedor obj = new Fornecedor();
-            obj.Nome = tbNome.Text;
-            obj.Cnpj = mtbCnpj.Text;
-            obj.Endereco = tbEndereco.Text;
-            obj.Numero = Convert.ToInt32(tbNumero.Text);
-            obj.Cep = mtbCep.Text;
-            obj.Complemento = tbComplemento.Text;
-            obj.Bairro = tbBairro.Text;
-            obj.Telefone = mtbTelefone.Text;
-            obj.Cidade = tbCidade.Text;
-            obj.Estado = tbEstado.Text;
-            obj.InscEstadual = mtbInscEstadual.Text;
-            obj.InscMunicipal = mtbInscMunicipal.Text;
-            obj.Email = tbEmail.Text;
-            if (tbNome.Text != "")
+            if (tbNome.Text.Trim() == string.Empty)
             {
-                if (fornecedorController.CadastrarFornecedor(obj) != null)
-                {
-                    MessageBox.Show("Cadastro realizado de: " + obj.Nome);
-                    DataTable dt = new DataTable();
-                    dt = FornecedorDAO.returnDataSource();
-                    tbNome.Text = "";
-                    mtbCnpj.Text = "";
-                    tbEndereco.Text = "";
-                    tbNumero.Text = "";
-                    mtbCep.Text = "";
-                    tbComplemento.Text = "";
-                    tbBairro.Text = "";
-                    mtbTelefone.Text = "";
-                    tbCidade.Text = "";
-                    tbEstado.Text = "";
-                    mtbInscEstadual.Text = "";
-                    mtbInscMunicipal.Text = "";
-                    tbEmail.Text = "";
+                MessageBox.Show("Nome não pode estar em branco", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                }
-                else
-                {
-                    MessageBox.Show("Cadastro não realizado de : " + obj.Nome);
-                }
             }
+            else
+            {
+                fornecedor.Nome = tbNome.Text;
+                fornecedor.Cnpj = mtbCnpj.Text;
+                fornecedor.Endereco = tbEndereco.Text;
+                fornecedor.Numero = Convert.ToInt32(tbNumero.Text);
+                fornecedor.Cep = mtbCep.Text;
+                fornecedor.Complemento = tbComplemento.Text;
+                fornecedor.Bairro = tbBairro.Text;
+                fornecedor.Telefone = mtbTelefone.Text;
+                fornecedor.Cidade = tbCidade.Text;
+                fornecedor.Estado = cbEstado.Text;
+                fornecedor.InscEstadual = mtbInscEstadual.Text;
+                fornecedor.InscMunicipal = mtbInscMunicipal.Text;
+                fornecedor.Email = tbEmail.Text;
+
+                fornecedorController.Salvar(fornecedor);
+
+                MessageBox.Show("Novo fornecedor salvo com sucesso!");
+
+                Limpar();
+                Listar();
+            }
+        }
+
+
+        private void Editar(Fornecedor fornecedor)
+        {
+            if (tbNome.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Nome não pode estar em branco", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                fornecedor.Id = Convert.ToInt32(tbId.Text);
+                fornecedor.Nome = tbNome.Text;
+                fornecedor.Cnpj = mtbCnpj.Text;
+                fornecedor.Endereco = tbEndereco.Text;
+                fornecedor.Numero = Convert.ToInt32(tbNumero.Text);
+                fornecedor.Cep = mtbCep.Text;
+                fornecedor.Complemento = tbComplemento.Text;
+                fornecedor.Bairro = tbBairro.Text;
+                fornecedor.Telefone = mtbTelefone.Text;
+                fornecedor.Cidade = tbCidade.Text;
+                fornecedor.Estado = cbEstado.Text;
+                fornecedor.InscEstadual = mtbInscEstadual.Text;
+                fornecedor.InscMunicipal = mtbInscMunicipal.Text;
+                fornecedor.Email = tbEmail.Text;
+
+                fornecedorController.Editar(fornecedor);
+
+                MessageBox.Show("Fornecedor alterado com sucesso!");
+
+                Limpar();
+                Listar();
+            }
+        }
+
+        private void Excluir(Fornecedor fornecedor)
+        {
+            if (tbNome.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Não é possivel excluir campos em branco", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (MessageBox.Show("Deseja realmente excluir esse fornecedor?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.No)
+            {
+
+            }
+            else
+            {
+                fornecedor.Id = Convert.ToInt32(tbId.Text);
+                fornecedor.Nome = tbNome.Text;
+                fornecedor.Cnpj = mtbCnpj.Text;
+                fornecedor.Endereco = tbEndereco.Text;
+                fornecedor.Numero = Convert.ToInt32(tbNumero.Text);
+                fornecedor.Cep = mtbCep.Text;
+                fornecedor.Complemento = tbComplemento.Text;
+                fornecedor.Bairro = tbBairro.Text;
+                fornecedor.Telefone = mtbTelefone.Text;
+                fornecedor.Cidade = tbCidade.Text;
+                fornecedor.Estado = cbEstado.Text;
+                fornecedor.InscEstadual = mtbInscEstadual.Text;
+                fornecedor.InscMunicipal = mtbInscMunicipal.Text;
+                fornecedor.Email = tbEmail.Text;
+
+                fornecedorController.Excluir(fornecedor);
+
+                MessageBox.Show("Fornecedor excluído com sucesso!");
+
+                Limpar();
+                Listar();
+            }
+        }
+
+        private void Listar()
+        {
+            dgvFornecedor.DataSource = fornecedorController.Listar();
+        }
+
+        public void Limpar()
+        {
+            tbId.Clear();
+            tbNome.Clear();
+            mtbCnpj.Clear();
+            tbEndereco.Clear();
+            tbNumero.Clear();
+            mtbCep.Clear();
+            tbComplemento.Clear();
+            tbBairro.Clear();
+            mtbTelefone.Clear();
+            tbCidade.Clear();
+            cbEstado.Text = "";
+            mtbInscEstadual.Clear();
+            mtbInscMunicipal.Clear();
+            tbEmail.Clear();
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            Fornecedor();
+            Fornecedor fornecedor = new Fornecedor();
+            Salvar(fornecedor);
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            tbNome.Text = "";
-            mtbCnpj.Text = "";
-            tbEndereco.Text = "";
-            tbNumero.Text = "";
-            mtbCep.Text = "";
-            tbComplemento.Text = "";
-            tbBairro.Text = "";
-            mtbTelefone.Text = "";
-            tbCidade.Text = "";
-            tbEstado.Text = "";
-            mtbInscEstadual.Text = "";
-            mtbInscMunicipal.Text = "";
-            tbEmail.Text = "";
+            Limpar();
         }
 
         private void frmCadastroFornecedor_Load(object sender, EventArgs e)
@@ -93,6 +162,36 @@ namespace TechStore.View
             // TODO: esta linha de código carrega dados na tabela 'techStoreDataSet.fornecedor'. Você pode movê-la ou removê-la conforme necessário.
             this.fornecedorTableAdapter.Fill(this.techStoreDataSet.fornecedor);
 
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            Fornecedor fornecedor = new Fornecedor();
+            Editar(fornecedor);
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            Fornecedor fornecedor = new Fornecedor();
+            Excluir(fornecedor);
+        }
+
+        private void dgvFornecedor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tbId.Text = dgvFornecedor.CurrentRow.Cells[0].Value.ToString();
+            tbNome.Text = dgvFornecedor.CurrentRow.Cells[1].Value.ToString();
+            mtbCnpj.Text = dgvFornecedor.CurrentRow.Cells[2].Value.ToString();
+            tbEndereco.Text = dgvFornecedor.CurrentRow.Cells[3].Value.ToString();
+            tbNumero.Text = dgvFornecedor.CurrentRow.Cells[4].Value.ToString();
+            mtbCep.Text = dgvFornecedor.CurrentRow.Cells[5].Value.ToString();
+            tbComplemento.Text = dgvFornecedor.CurrentRow.Cells[6].Value.ToString();
+            tbBairro.Text = dgvFornecedor.CurrentRow.Cells[7].Value.ToString();
+            mtbTelefone.Text = dgvFornecedor.CurrentRow.Cells[8].Value.ToString();
+            tbCidade.Text = dgvFornecedor.CurrentRow.Cells[10].Value.ToString();
+            cbEstado.Text = dgvFornecedor.CurrentRow.Cells[11].Value.ToString();
+            mtbInscEstadual.Text = dgvFornecedor.CurrentRow.Cells[11].Value.ToString();
+            mtbInscMunicipal.Text = dgvFornecedor.CurrentRow.Cells[11].Value.ToString();
+            tbEmail.Text = dgvFornecedor.CurrentRow.Cells[9].Value.ToString();
         }
     }
 }

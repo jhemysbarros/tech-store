@@ -9,7 +9,7 @@ using TechStore.Model;
 
 namespace TechStore.DAO
 {
-    class FuncionarioDAO : Conexao2
+    class FuncionarioDAO : Conexao
     {
         SqlCommand comando = null;
         public void Salvar(Funcionario funcionario)

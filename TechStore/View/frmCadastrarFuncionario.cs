@@ -19,7 +19,7 @@ namespace TechStore.View
         public frmCadastrarFuncionario()
         {
             InitializeComponent();
-            Limpar();
+            Listar();
         }
 
         private void Salvar(Funcionario funcionario)
@@ -43,9 +43,9 @@ namespace TechStore.View
                 funcionario.Telefone = mtbCelular.Text;
                 funcionario.Email = tbEmail.Text;
                 funcionario.Cidade = tbCidade.Text;
-                funcionario.Estado = tbEstado.Text;
+                funcionario.Estado = cbEstado.Text;
                 funcionario.Senha = tbSenha.Text;
-                funcionario.Cargo = tbCargo.Text;
+                funcionario.Cargo = cbCargo.Text;
 
                 funcionarioController.Salvar(funcionario);
 
@@ -77,9 +77,9 @@ namespace TechStore.View
                 funcionario.Telefone = mtbCelular.Text;
                 funcionario.Email = tbEmail.Text;
                 funcionario.Cidade = tbCidade.Text;
-                funcionario.Estado = tbEstado.Text;
+                funcionario.Estado = cbEstado.Text;
                 funcionario.Senha = tbSenha.Text;
-                funcionario.Cargo = tbCargo.Text;
+                funcionario.Cargo = cbCargo.Text;
 
                 funcionarioController.Editar(funcionario);
 
@@ -115,9 +115,9 @@ namespace TechStore.View
                 funcionario.Telefone = mtbCelular.Text;
                 funcionario.Email = tbEmail.Text;
                 funcionario.Cidade = tbCidade.Text;
-                funcionario.Estado = tbEstado.Text;
+                funcionario.Estado = cbEstado.Text;
                 funcionario.Senha = tbSenha.Text;
-                funcionario.Cargo = tbCargo.Text;
+                funcionario.Cargo = cbCargo.Text;
 
                 funcionarioController.Excluir(funcionario);
 
@@ -137,6 +137,7 @@ namespace TechStore.View
 
         public void Limpar()
         {
+            tbId.Clear();
             tbNome.Clear();
             mtbCpf.Clear();
             tbEndereco.Clear();
@@ -147,9 +148,9 @@ namespace TechStore.View
             mtbCelular.Clear();
             tbEmail.Clear();
             tbCidade.Clear();
-            tbEstado.Clear();
+            cbEstado.Text = "";
             tbSenha.Clear();
-            tbCargo.Clear();
+            cbCargo.Text = "";
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -179,6 +180,24 @@ namespace TechStore.View
         {
             Funcionario funcionario = new Funcionario();
             Excluir(funcionario);
+        }
+
+        private void dgvFuncionario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tbId.Text = dgvFuncionario.CurrentRow.Cells[0].Value.ToString();
+            tbNome.Text = dgvFuncionario.CurrentRow.Cells[1].Value.ToString();
+            mtbCpf.Text = dgvFuncionario.CurrentRow.Cells[2].Value.ToString();
+            tbEndereco.Text = dgvFuncionario.CurrentRow.Cells[3].Value.ToString();
+            tbNumero.Text = dgvFuncionario.CurrentRow.Cells[4].Value.ToString();
+            mtbCep.Text = dgvFuncionario.CurrentRow.Cells[5].Value.ToString();
+            tbComplemento.Text = dgvFuncionario.CurrentRow.Cells[6].Value.ToString();
+            tbBairro.Text = dgvFuncionario.CurrentRow.Cells[7].Value.ToString();
+            mtbCelular.Text = dgvFuncionario.CurrentRow.Cells[8].Value.ToString();
+            tbEmail.Text = dgvFuncionario.CurrentRow.Cells[9].Value.ToString();
+            tbCidade.Text = dgvFuncionario.CurrentRow.Cells[10].Value.ToString();
+            cbEstado.Text = dgvFuncionario.CurrentRow.Cells[11].Value.ToString();
+            tbSenha.Text = dgvFuncionario.CurrentRow.Cells[12].Value.ToString();
+            cbCargo.Text = dgvFuncionario.CurrentRow.Cells[10].Value.ToString();
         }
     }
 }

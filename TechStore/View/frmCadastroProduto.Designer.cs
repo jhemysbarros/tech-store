@@ -32,6 +32,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.tbPreco = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tbDescricao = new System.Windows.Forms.TextBox();
@@ -52,9 +55,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -109,6 +109,36 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar produto";
             // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(140, 135);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(59, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Nova";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(11, 135);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 118);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Categoria";
+            // 
             // tbPreco
             // 
             this.tbPreco.Location = new System.Drawing.Point(430, 87);
@@ -155,15 +185,15 @@
             // 
             // tbProduto
             // 
-            this.tbProduto.Location = new System.Drawing.Point(222, 41);
+            this.tbProduto.Location = new System.Drawing.Point(158, 41);
             this.tbProduto.Name = "tbProduto";
-            this.tbProduto.Size = new System.Drawing.Size(285, 20);
+            this.tbProduto.Size = new System.Drawing.Size(349, 20);
             this.tbProduto.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(219, 25);
+            this.label2.Location = new System.Drawing.Point(158, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 3;
@@ -173,7 +203,7 @@
             // 
             this.btnBuscarId.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarId.Image")));
             this.btnBuscarId.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarId.Location = new System.Drawing.Point(136, 40);
+            this.btnBuscarId.Location = new System.Drawing.Point(89, 40);
             this.btnBuscarId.Name = "btnBuscarId";
             this.btnBuscarId.Size = new System.Drawing.Size(63, 23);
             this.btnBuscarId.TabIndex = 2;
@@ -185,7 +215,8 @@
             // 
             this.tbId.Location = new System.Drawing.Point(11, 41);
             this.tbId.Name = "tbId";
-            this.tbId.Size = new System.Drawing.Size(119, 20);
+            this.tbId.ReadOnly = true;
+            this.tbId.Size = new System.Drawing.Size(72, 20);
             this.tbId.TabIndex = 1;
             // 
             // label1
@@ -315,35 +346,6 @@
             this.button4.Text = "Registrar";
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button4.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 118);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Categoria";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(11, 135);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 11;
-            // 
-            // button1
-            // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(140, 135);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(59, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Nova";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // frmCadastroProduto
             // 
