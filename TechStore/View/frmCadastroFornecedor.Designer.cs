@@ -37,22 +37,7 @@
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvFornecedor = new System.Windows.Forms.DataGridView();
-            this.idfornecedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cnpjDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enderecoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cepDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.complementoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bairroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inscestadualDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inscmunicipalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fornecedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.techStoreDataSet = new TechStore.TechStoreDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.tbId = new System.Windows.Forms.TextBox();
@@ -88,13 +73,30 @@
             this.btnBuscarNome = new System.Windows.Forms.Button();
             this.tbNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.techStoreDataSet = new TechStore.TechStoreDataSet();
+            this.fornecedorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.fornecedorTableAdapter = new TechStore.TechStoreDataSetTableAdapters.fornecedorTableAdapter();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.techStoreDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.techStoreDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -182,21 +184,21 @@
             this.dgvFornecedor.AutoGenerateColumns = false;
             this.dgvFornecedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFornecedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idfornecedorDataGridViewTextBoxColumn,
-            this.nomeDataGridViewTextBoxColumn,
-            this.cnpjDataGridViewTextBoxColumn,
-            this.enderecoDataGridViewTextBoxColumn,
-            this.numeroDataGridViewTextBoxColumn,
-            this.cepDataGridViewTextBoxColumn,
-            this.complementoDataGridViewTextBoxColumn,
-            this.bairroDataGridViewTextBoxColumn,
-            this.telefoneDataGridViewTextBoxColumn,
-            this.cidadeDataGridViewTextBoxColumn,
-            this.estadoDataGridViewTextBoxColumn,
-            this.inscestadualDataGridViewTextBoxColumn,
-            this.inscmunicipalDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn});
-            this.dgvFornecedor.DataSource = this.fornecedorBindingSource;
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14});
+            this.dgvFornecedor.DataSource = this.fornecedorBindingSource1;
             this.dgvFornecedor.Location = new System.Drawing.Point(3, 272);
             this.dgvFornecedor.Name = "dgvFornecedor";
             this.dgvFornecedor.ReadOnly = true;
@@ -205,113 +207,9 @@
             this.dgvFornecedor.TabIndex = 6;
             this.dgvFornecedor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFornecedor_CellDoubleClick);
             // 
-            // idfornecedorDataGridViewTextBoxColumn
-            // 
-            this.idfornecedorDataGridViewTextBoxColumn.DataPropertyName = "idfornecedor";
-            this.idfornecedorDataGridViewTextBoxColumn.HeaderText = "idfornecedor";
-            this.idfornecedorDataGridViewTextBoxColumn.Name = "idfornecedorDataGridViewTextBoxColumn";
-            this.idfornecedorDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cnpjDataGridViewTextBoxColumn
-            // 
-            this.cnpjDataGridViewTextBoxColumn.DataPropertyName = "cnpj";
-            this.cnpjDataGridViewTextBoxColumn.HeaderText = "cnpj";
-            this.cnpjDataGridViewTextBoxColumn.Name = "cnpjDataGridViewTextBoxColumn";
-            this.cnpjDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // enderecoDataGridViewTextBoxColumn
-            // 
-            this.enderecoDataGridViewTextBoxColumn.DataPropertyName = "endereco";
-            this.enderecoDataGridViewTextBoxColumn.HeaderText = "endereco";
-            this.enderecoDataGridViewTextBoxColumn.Name = "enderecoDataGridViewTextBoxColumn";
-            this.enderecoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // numeroDataGridViewTextBoxColumn
-            // 
-            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "numero";
-            this.numeroDataGridViewTextBoxColumn.HeaderText = "numero";
-            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
-            this.numeroDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cepDataGridViewTextBoxColumn
-            // 
-            this.cepDataGridViewTextBoxColumn.DataPropertyName = "cep";
-            this.cepDataGridViewTextBoxColumn.HeaderText = "cep";
-            this.cepDataGridViewTextBoxColumn.Name = "cepDataGridViewTextBoxColumn";
-            this.cepDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // complementoDataGridViewTextBoxColumn
-            // 
-            this.complementoDataGridViewTextBoxColumn.DataPropertyName = "complemento";
-            this.complementoDataGridViewTextBoxColumn.HeaderText = "complemento";
-            this.complementoDataGridViewTextBoxColumn.Name = "complementoDataGridViewTextBoxColumn";
-            this.complementoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // bairroDataGridViewTextBoxColumn
-            // 
-            this.bairroDataGridViewTextBoxColumn.DataPropertyName = "bairro";
-            this.bairroDataGridViewTextBoxColumn.HeaderText = "bairro";
-            this.bairroDataGridViewTextBoxColumn.Name = "bairroDataGridViewTextBoxColumn";
-            this.bairroDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // telefoneDataGridViewTextBoxColumn
-            // 
-            this.telefoneDataGridViewTextBoxColumn.DataPropertyName = "telefone";
-            this.telefoneDataGridViewTextBoxColumn.HeaderText = "telefone";
-            this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
-            this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cidadeDataGridViewTextBoxColumn
-            // 
-            this.cidadeDataGridViewTextBoxColumn.DataPropertyName = "cidade";
-            this.cidadeDataGridViewTextBoxColumn.HeaderText = "cidade";
-            this.cidadeDataGridViewTextBoxColumn.Name = "cidadeDataGridViewTextBoxColumn";
-            this.cidadeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // inscestadualDataGridViewTextBoxColumn
-            // 
-            this.inscestadualDataGridViewTextBoxColumn.DataPropertyName = "insc_estadual";
-            this.inscestadualDataGridViewTextBoxColumn.HeaderText = "insc_estadual";
-            this.inscestadualDataGridViewTextBoxColumn.Name = "inscestadualDataGridViewTextBoxColumn";
-            this.inscestadualDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // inscmunicipalDataGridViewTextBoxColumn
-            // 
-            this.inscmunicipalDataGridViewTextBoxColumn.DataPropertyName = "insc_municipal";
-            this.inscmunicipalDataGridViewTextBoxColumn.HeaderText = "insc_municipal";
-            this.inscmunicipalDataGridViewTextBoxColumn.Name = "inscmunicipalDataGridViewTextBoxColumn";
-            this.inscmunicipalDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // fornecedorBindingSource
             // 
             this.fornecedorBindingSource.DataMember = "fornecedor";
-            this.fornecedorBindingSource.DataSource = this.techStoreDataSet;
-            // 
-            // techStoreDataSet
-            // 
-            this.techStoreDataSet.DataSetName = "TechStoreDataSet";
-            this.techStoreDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox1
             // 
@@ -692,9 +590,117 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome/Razão social";
             // 
+            // techStoreDataSet
+            // 
+            this.techStoreDataSet.DataSetName = "TechStoreDataSet";
+            this.techStoreDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // fornecedorBindingSource1
+            // 
+            this.fornecedorBindingSource1.DataMember = "fornecedor";
+            this.fornecedorBindingSource1.DataSource = this.techStoreDataSet;
+            // 
             // fornecedorTableAdapter
             // 
             this.fornecedorTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "idfornecedor";
+            this.dataGridViewTextBoxColumn1.HeaderText = "idfornecedor";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "nome";
+            this.dataGridViewTextBoxColumn2.HeaderText = "nome";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "cnpj";
+            this.dataGridViewTextBoxColumn3.HeaderText = "cnpj";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "endereco";
+            this.dataGridViewTextBoxColumn4.HeaderText = "endereco";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "numero";
+            this.dataGridViewTextBoxColumn5.HeaderText = "numero";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "cep";
+            this.dataGridViewTextBoxColumn6.HeaderText = "cep";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "complemento";
+            this.dataGridViewTextBoxColumn7.HeaderText = "complemento";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "bairro";
+            this.dataGridViewTextBoxColumn8.HeaderText = "bairro";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "telefone";
+            this.dataGridViewTextBoxColumn9.HeaderText = "telefone";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "cidade";
+            this.dataGridViewTextBoxColumn10.HeaderText = "cidade";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "estado";
+            this.dataGridViewTextBoxColumn11.HeaderText = "estado";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "insc_estadual";
+            this.dataGridViewTextBoxColumn12.HeaderText = "insc_estadual";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "insc_municipal";
+            this.dataGridViewTextBoxColumn13.HeaderText = "insc_municipal";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "email";
+            this.dataGridViewTextBoxColumn14.HeaderText = "email";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
             // 
             // frmCadastroFornecedor
             // 
@@ -711,9 +717,10 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.techStoreDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.techStoreDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -759,25 +766,26 @@
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.Button btnBuscarEmail;
         private System.Windows.Forms.Label label13;
-        private TechStoreDataSet techStoreDataSet;
         private System.Windows.Forms.BindingSource fornecedorBindingSource;
-        private TechStoreDataSetTableAdapters.fornecedorTableAdapter fornecedorTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idfornecedorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cnpjDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn enderecoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cepDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn complementoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bairroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefoneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cidadeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn inscestadualDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn inscmunicipalDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         public System.Windows.Forms.TextBox tbId;
         private System.Windows.Forms.Label lbId;
         private System.Windows.Forms.ComboBox cbEstado;
+        private TechStoreDataSet techStoreDataSet;
+        private System.Windows.Forms.BindingSource fornecedorBindingSource1;
+        private TechStoreDataSetTableAdapters.fornecedorTableAdapter fornecedorTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
     }
 }

@@ -15,7 +15,9 @@ namespace TechStore.View
 {
     public partial class frmCadastroFornecedor : Form
     {
-        FornecedorController fornecedorController = new FornecedorController();
+        private FornecedorController fornecedorController = new FornecedorController();
+        private Fornecedor fornecedor = new Fornecedor();
+
         public frmCadastroFornecedor()
         {
             InitializeComponent();
@@ -148,7 +150,6 @@ namespace TechStore.View
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            Fornecedor fornecedor = new Fornecedor();
             Salvar(fornecedor);
         }
 
@@ -161,18 +162,15 @@ namespace TechStore.View
         {
             // TODO: esta linha de código carrega dados na tabela 'techStoreDataSet.fornecedor'. Você pode movê-la ou removê-la conforme necessário.
             this.fornecedorTableAdapter.Fill(this.techStoreDataSet.fornecedor);
-
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            Fornecedor fornecedor = new Fornecedor();
             Editar(fornecedor);
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            Fornecedor fornecedor = new Fornecedor();
             Excluir(fornecedor);
         }
 

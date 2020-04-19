@@ -11,7 +11,9 @@ namespace TechStore.Controller
 {
     class FuncionarioController
     {
-        FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+        private FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+        private DataTable dataTable = new DataTable();
+
         public void Salvar(Funcionario funcionario)
         {
             try
@@ -54,14 +56,27 @@ namespace TechStore.Controller
         {
             try
             {
-                DataTable dataTable = new DataTable();
-
                 dataTable = funcionarioDAO.Listar();
 
                 return dataTable;
             }
             catch (Exception erro)
             {
+                throw erro;
+            }
+        }
+
+        public object Pesquisar(Funcionario funcionario)
+        {
+            try
+            {
+                dataTable = funcionarioDAO.Pesquisar(funcionario);
+
+                return dataTable;
+            }
+            catch (Exception erro)
+            {
+
                 throw erro;
             }
         }

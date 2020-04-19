@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using TechStore.Model;
 
 namespace TechStore.DAO
@@ -112,12 +113,44 @@ namespace TechStore.DAO
             {
                 Conectar();
 
-                DataTable dataTable = new DataTable();
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
-
                 comando = new SqlCommand("SELECT * FROM Funcionario ORDER BY nome", conexao);
 
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
+
                 sqlDataAdapter.SelectCommand = comando;
+
+                DataTable dataTable = new DataTable();
+
+                sqlDataAdapter.Fill(dataTable);
+
+                return dataTable;
+            }
+            catch (Exception erro)
+            {
+
+                throw erro;
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
+        public DataTable Pesquisar(Funcionario funcionario)
+        {
+            try
+            {
+                Conectar();
+
+                comando = new SqlCommand("SELECT * FROM Funcionario WHERE nome LIKE @nome", conexao);
+
+                comando.Parameters.AddWithValue("@nome", "%" + funcionario.Nome + "%");
+
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
+
+                sqlDataAdapter.SelectCommand = comando;
+
+                DataTable dataTable = new DataTable();
 
                 sqlDataAdapter.Fill(dataTable);
 

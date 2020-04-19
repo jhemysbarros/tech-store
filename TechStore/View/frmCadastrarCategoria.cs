@@ -7,6 +7,10 @@ namespace TechStore.View
 {
     public partial class frmCadastrarCategoria : Form
     {
+        private CategoriaController categoriaController = new CategoriaController();
+        private Categoria categoria = new Categoria();
+
+
         public frmCadastrarCategoria()
         {
             InitializeComponent();
@@ -15,12 +19,11 @@ namespace TechStore.View
 
         private void Salvar(Categoria categoria)
         {
-            CategoriaController categoriaController = new CategoriaController();
 
             if (tbCategoria.Text.Trim() == string.Empty)
             {
                 MessageBox.Show("Categoria não pode estar em branco", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                tbCategoria.Focus();
             }
             else
             {
@@ -37,8 +40,6 @@ namespace TechStore.View
 
         private void Editar(Categoria categoria)
         {
-            CategoriaController categoriaController = new CategoriaController();
-
             if (tbCategoria.Text.Trim() == string.Empty)
             {
                 MessageBox.Show("Categoria não pode estar em branco", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -59,8 +60,6 @@ namespace TechStore.View
 
         private void Excluir(Categoria categoria)
         {
-            CategoriaController categoriaController = new CategoriaController();
-
             if (tbCategoria.Text.Trim() == string.Empty)
             {
                 MessageBox.Show("Não é possivel excluir campos em branco", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -84,8 +83,6 @@ namespace TechStore.View
 
         private void Listar()
         {
-            CategoriaController categoriaController = new CategoriaController();
-
             dgvCategoria.DataSource = categoriaController.Listar();
 
         }
@@ -98,19 +95,16 @@ namespace TechStore.View
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            Categoria categoria = new Categoria();
             Salvar(categoria);
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            Categoria categoria = new Categoria();
             Editar(categoria);
         }
 
         private void btnExluir_Click(object sender, EventArgs e)
         {
-            Categoria categoria = new Categoria();
             Excluir(categoria);
         }
 
@@ -118,7 +112,8 @@ namespace TechStore.View
         {
             // TODO: esta linha de código carrega dados na tabela 'techStoreDataSet.categoria'. Você pode movê-la ou removê-la conforme necessário.
             this.categoriaTableAdapter.Fill(this.techStoreDataSet.categoria);
-
+            // TODO: esta linha de código carrega dados na tabela 'techStoreDataSet.produto'. Você pode movê-la ou removê-la conforme necessário.
+            //this.categoriaTableAdapter.Fill(this.techStoreDataSet.produto);
         }
 
         private void dgvCategoria_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

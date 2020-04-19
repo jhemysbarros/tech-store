@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stripCadastrarUsuario = new System.Windows.Forms.ToolStripMenuItem();
+            this.stripRelatorio = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -56,8 +56,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sobreToolStripMenuItem,
-            this.cadastroToolStripMenuItem,
+            this.stripCadastrarUsuario,
+            this.stripRelatorio,
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -65,20 +65,20 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // sobreToolStripMenuItem
+            // stripCadastrarUsuario
             // 
-            this.sobreToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
-            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(175, 25);
-            this.sobreToolStripMenuItem.Text = "Cadastrar Funcionário";
-            this.sobreToolStripMenuItem.Click += new System.EventHandler(this.sobreToolStripMenuItem_Click);
+            this.stripCadastrarUsuario.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.stripCadastrarUsuario.Name = "stripCadastrarUsuario";
+            this.stripCadastrarUsuario.Size = new System.Drawing.Size(175, 25);
+            this.stripCadastrarUsuario.Text = "Cadastrar Funcionário";
+            this.stripCadastrarUsuario.Click += new System.EventHandler(this.sobreToolStripMenuItem_Click);
             // 
-            // cadastroToolStripMenuItem
+            // stripRelatorio
             // 
-            this.cadastroToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(92, 25);
-            this.cadastroToolStripMenuItem.Text = "Relatórios";
+            this.stripRelatorio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stripRelatorio.Name = "stripRelatorio";
+            this.stripRelatorio.Size = new System.Drawing.Size(92, 25);
+            this.stripRelatorio.Text = "Relatórios";
             // 
             // toolStripMenuItem1
             // 
@@ -260,8 +260,8 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stripRelatorio;
+        private System.Windows.Forms.ToolStripMenuItem stripCadastrarUsuario;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;

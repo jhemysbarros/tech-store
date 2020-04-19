@@ -37,9 +37,9 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvCategoria = new System.Windows.Forms.DataGridView();
-            this.idcategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoriaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.techStoreDataSet = new TechStore.TechStoreDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBuscarProduto = new System.Windows.Forms.Button();
@@ -48,13 +48,15 @@
             this.btnBuscarId = new System.Windows.Forms.Button();
             this.tbId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriaTableAdapter = new TechStore.TechStoreDataSetTableAdapters.categoriaTableAdapter();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.techStoreDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -71,6 +73,7 @@
             // 
             // btnAlterar
             // 
+            this.btnAlterar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlterar.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterar.Image")));
             this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -85,6 +88,7 @@
             // 
             // btnLimpar
             // 
+            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpar.Image")));
             this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -99,6 +103,7 @@
             // 
             // btnExluir
             // 
+            this.btnExluir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExluir.Image")));
             this.btnExluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -113,6 +118,7 @@
             // 
             // btnSalvar
             // 
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -143,9 +149,9 @@
             this.dgvCategoria.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategoria.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idcategoriaDataGridViewTextBoxColumn,
-            this.nomeDataGridViewTextBoxColumn});
-            this.dgvCategoria.DataSource = this.categoriaBindingSource;
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.dgvCategoria.DataSource = this.categoriaBindingSource1;
             this.dgvCategoria.Location = new System.Drawing.Point(4, 90);
             this.dgvCategoria.Name = "dgvCategoria";
             this.dgvCategoria.ReadOnly = true;
@@ -154,25 +160,24 @@
             this.dgvCategoria.TabIndex = 6;
             this.dgvCategoria.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategoria_CellDoubleClick);
             // 
-            // idcategoriaDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.idcategoriaDataGridViewTextBoxColumn.DataPropertyName = "idcategoria";
-            this.idcategoriaDataGridViewTextBoxColumn.HeaderText = "Código de Categoria";
-            this.idcategoriaDataGridViewTextBoxColumn.Name = "idcategoriaDataGridViewTextBoxColumn";
-            this.idcategoriaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idcategoriaDataGridViewTextBoxColumn.Width = 130;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "idcategoria";
+            this.dataGridViewTextBoxColumn1.HeaderText = "idcategoria";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // nomeDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn2
             // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Categoria";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "nome";
+            this.dataGridViewTextBoxColumn2.HeaderText = "nome";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // categoriaBindingSource
+            // categoriaBindingSource1
             // 
-            this.categoriaBindingSource.DataMember = "categoria";
-            this.categoriaBindingSource.DataSource = this.techStoreDataSet;
+            this.categoriaBindingSource1.DataMember = "categoria";
+            this.categoriaBindingSource1.DataSource = this.techStoreDataSet;
             // 
             // techStoreDataSet
             // 
@@ -251,6 +256,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
+            // categoriaBindingSource
+            // 
+            this.categoriaBindingSource.DataMember = "categoria";
+            // 
             // categoriaTableAdapter
             // 
             this.categoriaTableAdapter.ClearBeforeFill = true;
@@ -269,10 +278,11 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.techStoreDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -293,10 +303,11 @@
         private System.Windows.Forms.Button btnBuscarId;
         private System.Windows.Forms.TextBox tbId;
         private System.Windows.Forms.Label label1;
-        private TechStoreDataSet techStoreDataSet;
         private System.Windows.Forms.BindingSource categoriaBindingSource;
+        private TechStoreDataSet techStoreDataSet;
+        private System.Windows.Forms.BindingSource categoriaBindingSource1;
         private TechStoreDataSetTableAdapters.categoriaTableAdapter categoriaTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idcategoriaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }
