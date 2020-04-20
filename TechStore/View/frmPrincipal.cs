@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TechStore.View;
 
@@ -13,14 +6,20 @@ namespace TechStore
 {
     public partial class frmPrincipal : Form
     {
-        public frmPrincipal()
+        public frmPrincipal(string cargo)
         {
             InitializeComponent();
+            lblCargo.Text = cargo;
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             toolStripStatusLabel2.Text = DateTime.Now.ToLongDateString();
+
+            if (lblCargo.Text != "Admin")
+            {
+                stripCadastrarUsuario.Enabled = false;
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)

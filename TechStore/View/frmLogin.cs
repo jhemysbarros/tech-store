@@ -1,66 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using System.Windows.Forms;
+using TechStore.Controller;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using TechStore.DAO;
-using TechStore.Model;
-using TechStore.Controller;
 
 namespace TechStore
 {
     public partial class frmLogin : Form
     {
+        SqlCommand comando = null;
         FuncionarioController funcionarioController = new FuncionarioController();
+
         public frmLogin()
         {
             InitializeComponent();
-        }
-
-        public void Logar(Funcionario funcionario)
-        {
-            try
-            {
-                if (tbEmail.Text == string.Empty)
-                {
-                    MessageBox.Show("Informe o usuário!");
-                    tbEmail.Focus();
-                    return;
-                }
-
-                if (tbSenha.Text == string.Empty)
-                {
-                    MessageBox.Show("Informe a senha!");
-                    tbSenha.Focus();
-                    return;
-                }
-
-                funcionario.Email = tbEmail.Text;
-                funcionario.Senha = tbSenha.Text;
-
-                funcionario = funcionarioController.Login(funcionario);
-
-                if (funcionario.Email == null)
-                {
-                    lblMensagem.Text = "Usuário ou senha incorretos!";
-                    lblMensagem.ForeColor = Color.Red;
-                    return;
-                }
-
-                frmPrincipal frmPrincipal = new frmPrincipal();
-                this.Hide();
-                frmPrincipal.Show();
-            }
-            catch (Exception erro)
-            {
-
-                throw erro;
-            }
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -70,12 +24,38 @@ namespace TechStore
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            Funcionario funcionario = new Funcionario();
+            try
+            {
+                SqlConnection conexao = new SqlConnection("Data Source=DESKTOP-DP6GSUO\\SQLEXPRESS;Initial Catalog=TechStore;Integrated Security=True");
 
-            Logar(funcionario);
+                comando = new SqlCommand("SELECT cargo FROM Funcionario WHERE email = '" + tbEmail.Text + "' AND senha = '" + tbSenha.Text + "' ", conexao);
 
-            tbEmail.Clear();
-            tbSenha.Clear();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
+                DataTable dataTable = new DataTable();
+
+                sqlDataAdapter.SelectCommand = comando;
+
+                sqlDataAdapter.Fill(dataTable);
+
+                if (dataTable.Rows.Count == 1)
+                {
+                    this.Hide();
+                    frmPrincipal frmPrincipal = new frmPrincipal(dataTable.Rows[0][0].ToString());
+                    frmPrincipal.Show();
+                }
+                else
+                {
+                    lblMensagem.Text = "Usuário ou senha incorretos!";
+                    lblMensagem.ForeColor = Color.Red;
+                    tbEmail.Clear();
+                    tbSenha.Clear();
+                }
+            }
+            catch (Exception erro)
+            {
+
+                throw erro;
+            }
         }
     }
 }

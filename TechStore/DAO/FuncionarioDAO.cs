@@ -14,48 +14,6 @@ namespace TechStore.DAO
     {
         SqlCommand comando = null;
 
-        public Funcionario Login(Funcionario funcionario)
-        {
-            try
-            {
-                Conectar();
-
-                comando = new SqlCommand("SELECT * FROM Funcionario WHERE email = @email AND senha = @senha", conexao);
-
-                comando.Parameters.AddWithValue("@email", funcionario.Email);
-                comando.Parameters.AddWithValue("@senha", funcionario.Senha);
-
-                SqlDataReader sqlDataReader;
-
-                sqlDataReader = comando.ExecuteReader();
-
-                if (sqlDataReader.HasRows)
-                {
-                    while (sqlDataReader.Read())
-                    {
-                        funcionario.Email = Convert.ToString(sqlDataReader["email"]);
-                        funcionario.Senha = Convert.ToString(sqlDataReader["senha"]);
-                    }
-                }
-                else
-                {
-                    funcionario.Email = null;
-                    funcionario.Senha = null;
-                }
-
-                return funcionario;
-            }
-            catch (Exception erro)
-            {
-
-                throw erro;
-            }
-            finally
-            {
-                Desconectar();
-            }
-        }
-
         public void Salvar(Funcionario funcionario)
         {
             try
