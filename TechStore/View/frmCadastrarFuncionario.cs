@@ -20,7 +20,7 @@ namespace TechStore.View
         {
             if (tbNome.Text.Trim() == string.Empty)
             {
-                MessageBox.Show("Nome não pode estar em branco", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nome do funcionário não pode estar em branco!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -52,7 +52,7 @@ namespace TechStore.View
         {
             if (tbNome.Text.Trim() == string.Empty)
             {
-                MessageBox.Show("Nome não pode estar em branco", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nome do funcionário não pode estar em branco!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -154,7 +154,7 @@ namespace TechStore.View
             tbCidade.Clear();
             cbEstado.Text = "";
             tbSenha.Clear();
-            cbCargo.Text = string.Empty;
+            cbCargo.SelectedIndex = -1;
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -199,6 +199,8 @@ namespace TechStore.View
             cbEstado.Text = dgvFuncionario.CurrentRow.Cells[11].Value.ToString();
             tbSenha.Text = dgvFuncionario.CurrentRow.Cells[12].Value.ToString();
             cbCargo.Text = dgvFuncionario.CurrentRow.Cells[13].Value.ToString();
+
+            tbBuscarNome.Clear();
         }
     }
 }

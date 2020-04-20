@@ -32,22 +32,25 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroProduto));
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvProduto = new System.Windows.Forms.DataGridView();
-            this.produtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.produtoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.produtoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.techStoreDataSet = new TechStore.TechStoreDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.produtoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.techStoreDataSet = new TechStore.TechStoreDataSet();
             this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.tbPreco = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tbDescricao = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnBuscarProduto = new System.Windows.Forms.Button();
             this.tbProduto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnBuscarId = new System.Windows.Forms.Button();
             this.tbId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -55,30 +58,25 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.produtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriaTableAdapter = new TechStore.TechStoreDataSetTableAdapters.categoriaTableAdapter();
             this.produtoTableAdapter = new TechStore.TechStoreDataSetTableAdapters.produtoTableAdapter();
-            this.produtoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.produtoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.techStoreDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.techStoreDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             this.panel3.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -113,9 +111,50 @@
             this.dgvProduto.TabIndex = 6;
             this.dgvProduto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduto_CellDoubleClick);
             // 
-            // produtoBindingSource
+            // dataGridViewTextBoxColumn1
             // 
-            this.produtoBindingSource.DataMember = "produto";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "idproduto";
+            this.dataGridViewTextBoxColumn1.HeaderText = "idproduto";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // produtoDataGridViewTextBoxColumn
+            // 
+            this.produtoDataGridViewTextBoxColumn.DataPropertyName = "produto";
+            this.produtoDataGridViewTextBoxColumn.HeaderText = "produto";
+            this.produtoDataGridViewTextBoxColumn.Name = "produtoDataGridViewTextBoxColumn";
+            this.produtoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "descricao";
+            this.dataGridViewTextBoxColumn2.HeaderText = "descricao";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "preco";
+            this.dataGridViewTextBoxColumn3.HeaderText = "preco";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "fk_categoria";
+            this.dataGridViewTextBoxColumn4.HeaderText = "fk_categoria";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // produtoBindingSource2
+            // 
+            this.produtoBindingSource2.DataMember = "produto";
+            this.produtoBindingSource2.DataSource = this.techStoreDataSet;
+            // 
+            // techStoreDataSet
+            // 
+            this.techStoreDataSet.DataSetName = "TechStoreDataSet";
+            this.techStoreDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox1
             // 
@@ -126,16 +165,14 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.tbDescricao);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.btnBuscarProduto);
             this.groupBox1.Controls.Add(this.tbProduto);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.btnBuscarId);
             this.groupBox1.Controls.Add(this.tbId);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(4, 76);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(582, 168);
-            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar produto";
             // 
@@ -147,7 +184,7 @@
             this.button1.Location = new System.Drawing.Point(140, 135);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(59, 23);
-            this.button1.TabIndex = 7;
+            this.button1.TabIndex = 5;
             this.button1.Text = "Nova";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
@@ -162,18 +199,13 @@
             this.cbCategoria.Location = new System.Drawing.Point(11, 135);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(121, 21);
-            this.cbCategoria.TabIndex = 6;
+            this.cbCategoria.TabIndex = 4;
             this.cbCategoria.ValueMember = "idcategoria";
             // 
             // produtoBindingSource1
             // 
             this.produtoBindingSource1.DataMember = "produto";
             this.produtoBindingSource1.DataSource = this.techStoreDataSet;
-            // 
-            // techStoreDataSet
-            // 
-            this.techStoreDataSet.DataSetName = "TechStoreDataSet";
-            this.techStoreDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // categoriaBindingSource
             // 
@@ -194,7 +226,7 @@
             this.tbPreco.Location = new System.Drawing.Point(430, 87);
             this.tbPreco.Name = "tbPreco";
             this.tbPreco.Size = new System.Drawing.Size(146, 20);
-            this.tbPreco.TabIndex = 5;
+            this.tbPreco.TabIndex = 3;
             // 
             // label4
             // 
@@ -210,7 +242,7 @@
             this.tbDescricao.Location = new System.Drawing.Point(11, 87);
             this.tbDescricao.Name = "tbDescricao";
             this.tbDescricao.Size = new System.Drawing.Size(403, 20);
-            this.tbDescricao.TabIndex = 4;
+            this.tbDescricao.TabIndex = 2;
             // 
             // label3
             // 
@@ -221,45 +253,21 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Descrição";
             // 
-            // btnBuscarProduto
-            // 
-            this.btnBuscarProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarProduto.Image")));
-            this.btnBuscarProduto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarProduto.Location = new System.Drawing.Point(513, 40);
-            this.btnBuscarProduto.Name = "btnBuscarProduto";
-            this.btnBuscarProduto.Size = new System.Drawing.Size(63, 23);
-            this.btnBuscarProduto.TabIndex = 3;
-            this.btnBuscarProduto.Text = "Buscar";
-            this.btnBuscarProduto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscarProduto.UseVisualStyleBackColor = true;
-            // 
             // tbProduto
             // 
-            this.tbProduto.Location = new System.Drawing.Point(158, 41);
+            this.tbProduto.Location = new System.Drawing.Point(95, 41);
             this.tbProduto.Name = "tbProduto";
-            this.tbProduto.Size = new System.Drawing.Size(349, 20);
+            this.tbProduto.Size = new System.Drawing.Size(481, 20);
             this.tbProduto.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(158, 25);
+            this.label2.Location = new System.Drawing.Point(95, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Produto";
-            // 
-            // btnBuscarId
-            // 
-            this.btnBuscarId.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarId.Image")));
-            this.btnBuscarId.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarId.Location = new System.Drawing.Point(89, 40);
-            this.btnBuscarId.Name = "btnBuscarId";
-            this.btnBuscarId.Size = new System.Drawing.Size(63, 23);
-            this.btnBuscarId.TabIndex = 1;
-            this.btnBuscarId.Text = "Buscar";
-            this.btnBuscarId.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscarId.UseVisualStyleBackColor = true;
             // 
             // tbId
             // 
@@ -320,72 +328,79 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.btnAlterar);
+            this.panel1.Controls.Add(this.btnLimpar);
+            this.panel1.Controls.Add(this.btnExcluir);
+            this.panel1.Controls.Add(this.btnSalvar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(784, 73);
             this.panel1.TabIndex = 4;
             // 
-            // button5
+            // btnAlterar
             // 
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.Location = new System.Drawing.Point(74, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(68, 65);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Alterar";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnAlterar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterar.Image")));
+            this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAlterar.Location = new System.Drawing.Point(74, 4);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(68, 65);
+            this.btnAlterar.TabIndex = 1;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
-            // button3
+            // btnLimpar
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(214, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(68, 65);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Limpar";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpar.Image")));
+            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnLimpar.Location = new System.Drawing.Point(214, 4);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(68, 65);
+            this.btnLimpar.TabIndex = 3;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
-            // button2
+            // btnExcluir
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(144, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(68, 65);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Excluir";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExcluir.Location = new System.Drawing.Point(144, 4);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(68, 65);
+            this.btnExcluir.TabIndex = 2;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
-            // button4
+            // btnSalvar
             // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(4, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(68, 65);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Registrar";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSalvar.Location = new System.Drawing.Point(4, 4);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(68, 65);
+            this.btnSalvar.TabIndex = 0;
+            this.btnSalvar.Text = "Registrar";
+            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // produtoBindingSource
+            // 
+            this.produtoBindingSource.DataMember = "produto";
             // 
             // categoriaTableAdapter
             // 
@@ -394,46 +409,6 @@
             // produtoTableAdapter
             // 
             this.produtoTableAdapter.ClearBeforeFill = true;
-            // 
-            // produtoBindingSource2
-            // 
-            this.produtoBindingSource2.DataMember = "produto";
-            this.produtoBindingSource2.DataSource = this.techStoreDataSet;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "idproduto";
-            this.dataGridViewTextBoxColumn1.HeaderText = "idproduto";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // produtoDataGridViewTextBoxColumn
-            // 
-            this.produtoDataGridViewTextBoxColumn.DataPropertyName = "produto";
-            this.produtoDataGridViewTextBoxColumn.HeaderText = "produto";
-            this.produtoDataGridViewTextBoxColumn.Name = "produtoDataGridViewTextBoxColumn";
-            this.produtoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "descricao";
-            this.dataGridViewTextBoxColumn2.HeaderText = "descricao";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "preco";
-            this.dataGridViewTextBoxColumn3.HeaderText = "preco";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "fk_categoria";
-            this.dataGridViewTextBoxColumn4.HeaderText = "fk_categoria";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // frmCadastroProduto
             // 
@@ -447,17 +422,17 @@
             this.Load += new System.EventHandler(this.frmCadastroProduto_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.techStoreDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.techStoreDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -469,19 +444,17 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox tbPreco;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbDescricao;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnBuscarProduto;
         private System.Windows.Forms.TextBox tbProduto;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnBuscarId;
         private System.Windows.Forms.TextBox tbId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvProduto;

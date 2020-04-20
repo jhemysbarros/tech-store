@@ -19,8 +19,8 @@ namespace TechStore.View
 
         private void button3_Click(object sender, EventArgs e)
         {
-            tbId.Text = "";
-            tbProduto.Text = "";
+            tbId.Clear();
+            tbProduto.Clear();
         }
     }
 }

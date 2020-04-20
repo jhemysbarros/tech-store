@@ -14,6 +14,19 @@ namespace TechStore.Controller
         private FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
         private DataTable dataTable = new DataTable();
 
+        public Funcionario Login(Funcionario funcionario)
+        {
+            try
+            {
+                return funcionarioDAO.Login(funcionario);
+            }
+            catch (Exception erro)
+            {
+
+                throw erro;
+            }
+        }
+
         public void Salvar(Funcionario funcionario)
         {
             try

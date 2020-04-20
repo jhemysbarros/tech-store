@@ -42,10 +42,10 @@
             this.categoriaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.techStoreDataSet = new TechStore.TechStoreDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnBuscarProduto = new System.Windows.Forms.Button();
+            this.tbBuscarCategoria = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.tbCategoria = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnBuscarId = new System.Windows.Forms.Button();
             this.tbId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -152,11 +152,11 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.dgvCategoria.DataSource = this.categoriaBindingSource1;
-            this.dgvCategoria.Location = new System.Drawing.Point(4, 90);
+            this.dgvCategoria.Location = new System.Drawing.Point(4, 136);
             this.dgvCategoria.Name = "dgvCategoria";
             this.dgvCategoria.ReadOnly = true;
             this.dgvCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCategoria.Size = new System.Drawing.Size(448, 195);
+            this.dgvCategoria.Size = new System.Drawing.Size(448, 149);
             this.dgvCategoria.TabIndex = 6;
             this.dgvCategoria.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategoria_CellDoubleClick);
             // 
@@ -186,58 +186,51 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnBuscarProduto);
+            this.groupBox1.Controls.Add(this.tbBuscarCategoria);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.tbCategoria);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.btnBuscarId);
             this.groupBox1.Controls.Add(this.tbId);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(3, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(448, 78);
+            this.groupBox1.Size = new System.Drawing.Size(448, 124);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastrar categoria";
             // 
-            // btnBuscarProduto
+            // tbBuscarCategoria
             // 
-            this.btnBuscarProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarProduto.Image")));
-            this.btnBuscarProduto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarProduto.Location = new System.Drawing.Point(315, 40);
-            this.btnBuscarProduto.Name = "btnBuscarProduto";
-            this.btnBuscarProduto.Size = new System.Drawing.Size(63, 23);
-            this.btnBuscarProduto.TabIndex = 4;
-            this.btnBuscarProduto.Text = "Buscar";
-            this.btnBuscarProduto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscarProduto.UseVisualStyleBackColor = true;
+            this.tbBuscarCategoria.Location = new System.Drawing.Point(199, 94);
+            this.tbBuscarCategoria.Name = "tbBuscarCategoria";
+            this.tbBuscarCategoria.Size = new System.Drawing.Size(243, 20);
+            this.tbBuscarCategoria.TabIndex = 4;
+            this.tbBuscarCategoria.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(196, 78);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Buscar categoria";
             // 
             // tbCategoria
             // 
-            this.tbCategoria.Location = new System.Drawing.Point(147, 41);
+            this.tbCategoria.Location = new System.Drawing.Point(90, 40);
             this.tbCategoria.Name = "tbCategoria";
-            this.tbCategoria.Size = new System.Drawing.Size(163, 20);
+            this.tbCategoria.Size = new System.Drawing.Size(332, 20);
             this.tbCategoria.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(144, 25);
+            this.label2.Location = new System.Drawing.Point(89, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Categoria";
-            // 
-            // btnBuscarId
-            // 
-            this.btnBuscarId.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarId.Image")));
-            this.btnBuscarId.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarId.Location = new System.Drawing.Point(74, 40);
-            this.btnBuscarId.Name = "btnBuscarId";
-            this.btnBuscarId.Size = new System.Drawing.Size(63, 23);
-            this.btnBuscarId.TabIndex = 2;
-            this.btnBuscarId.Text = "Buscar";
-            this.btnBuscarId.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscarId.UseVisualStyleBackColor = true;
             // 
             // tbId
             // 
@@ -297,10 +290,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvCategoria;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnBuscarProduto;
         private System.Windows.Forms.TextBox tbCategoria;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnBuscarId;
         private System.Windows.Forms.TextBox tbId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource categoriaBindingSource;
@@ -309,5 +300,7 @@
         private TechStoreDataSetTableAdapters.categoriaTableAdapter categoriaTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.TextBox tbBuscarCategoria;
+        private System.Windows.Forms.Label label3;
     }
 }

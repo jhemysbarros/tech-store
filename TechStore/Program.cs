@@ -18,9 +18,7 @@ namespace TechStore
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmPrincipal());
-            //Application.Run(new frmCadastroProduto());
-            //Application.Run(new frmCadastrarCategoria());
-            Application.Run(new frmCadastrarFuncionario());
+            Application.Run(new frmLogin());
         }
     }
 }

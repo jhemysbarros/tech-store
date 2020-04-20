@@ -59,7 +59,6 @@
             this.tbSenha = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tbEmail = new System.Windows.Forms.TextBox();
-            this.btnBuscarEmail = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.tbCidade = new System.Windows.Forms.TextBox();
@@ -70,7 +69,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tbComplemento = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnBuscarCep = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.mtbCep = new System.Windows.Forms.MaskedTextBox();
             this.mtbCpf = new System.Windows.Forms.MaskedTextBox();
@@ -78,9 +76,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tbEndereco = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnBuscarCpf = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnBuscarNome = new System.Windows.Forms.Button();
             this.tbNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.funcionarioBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -263,7 +259,6 @@
             this.groupBox1.Controls.Add(this.tbSenha);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.tbEmail);
-            this.groupBox1.Controls.Add(this.btnBuscarEmail);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.tbCidade);
@@ -274,7 +269,6 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.tbComplemento);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.btnBuscarCep);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.mtbCep);
             this.groupBox1.Controls.Add(this.mtbCpf);
@@ -282,9 +276,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.tbEndereco);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.btnBuscarCpf);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.btnBuscarNome);
             this.groupBox1.Controls.Add(this.tbNome);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(4, 6);
@@ -299,7 +291,7 @@
             this.tbBuscarNome.Location = new System.Drawing.Point(347, 227);
             this.tbBuscarNome.Name = "tbBuscarNome";
             this.tbBuscarNome.Size = new System.Drawing.Size(421, 20);
-            this.tbBuscarNome.TabIndex = 18;
+            this.tbBuscarNome.TabIndex = 14;
             this.tbBuscarNome.TextChanged += new System.EventHandler(this.tbBuscarNome_TextChanged);
             // 
             // label14
@@ -346,7 +338,7 @@
             this.cbEstado.Location = new System.Drawing.Point(603, 177);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(165, 21);
-            this.cbEstado.TabIndex = 15;
+            this.cbEstado.TabIndex = 11;
             // 
             // cbCargo
             // 
@@ -358,7 +350,7 @@
             this.cbCargo.Location = new System.Drawing.Point(168, 226);
             this.cbCargo.Name = "cbCargo";
             this.cbCargo.Size = new System.Drawing.Size(121, 21);
-            this.cbCargo.TabIndex = 17;
+            this.cbCargo.TabIndex = 13;
             // 
             // tbId
             // 
@@ -391,7 +383,7 @@
             this.tbSenha.Location = new System.Drawing.Point(11, 226);
             this.tbSenha.Name = "tbSenha";
             this.tbSenha.Size = new System.Drawing.Size(141, 20);
-            this.tbSenha.TabIndex = 16;
+            this.tbSenha.TabIndex = 12;
             // 
             // label12
             // 
@@ -404,22 +396,10 @@
             // 
             // tbEmail
             // 
-            this.tbEmail.Location = new System.Drawing.Point(11, 178);
+            this.tbEmail.Location = new System.Drawing.Point(11, 177);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(341, 20);
-            this.tbEmail.TabIndex = 12;
-            // 
-            // btnBuscarEmail
-            // 
-            this.btnBuscarEmail.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarEmail.Image")));
-            this.btnBuscarEmail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarEmail.Location = new System.Drawing.Point(358, 177);
-            this.btnBuscarEmail.Name = "btnBuscarEmail";
-            this.btnBuscarEmail.Size = new System.Drawing.Size(63, 23);
-            this.btnBuscarEmail.TabIndex = 13;
-            this.btnBuscarEmail.Text = "Buscar";
-            this.btnBuscarEmail.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscarEmail.UseVisualStyleBackColor = true;
+            this.tbEmail.TabIndex = 9;
             // 
             // label13
             // 
@@ -433,7 +413,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(601, 163);
+            this.label9.Location = new System.Drawing.Point(601, 162);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(40, 13);
             this.label9.TabIndex = 11;
@@ -441,15 +421,15 @@
             // 
             // tbCidade
             // 
-            this.tbCidade.Location = new System.Drawing.Point(447, 178);
+            this.tbCidade.Location = new System.Drawing.Point(447, 177);
             this.tbCidade.Name = "tbCidade";
             this.tbCidade.Size = new System.Drawing.Size(141, 20);
-            this.tbCidade.TabIndex = 14;
+            this.tbCidade.TabIndex = 10;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(444, 163);
+            this.label10.Location = new System.Drawing.Point(444, 162);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(40, 13);
             this.label10.TabIndex = 10;
@@ -458,7 +438,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(600, 116);
+            this.label6.Location = new System.Drawing.Point(615, 116);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(39, 13);
             this.label6.TabIndex = 8;
@@ -466,18 +446,18 @@
             // 
             // mtbCelular
             // 
-            this.mtbCelular.Location = new System.Drawing.Point(603, 131);
+            this.mtbCelular.Location = new System.Drawing.Point(618, 131);
             this.mtbCelular.Mask = "(00) 0 0000-0000";
             this.mtbCelular.Name = "mtbCelular";
-            this.mtbCelular.Size = new System.Drawing.Size(100, 20);
-            this.mtbCelular.TabIndex = 11;
+            this.mtbCelular.Size = new System.Drawing.Size(150, 20);
+            this.mtbCelular.TabIndex = 8;
             // 
             // tbBairro
             // 
             this.tbBairro.Location = new System.Drawing.Point(429, 131);
             this.tbBairro.Name = "tbBairro";
             this.tbBairro.Size = new System.Drawing.Size(168, 20);
-            this.tbBairro.TabIndex = 10;
+            this.tbBairro.TabIndex = 7;
             // 
             // label7
             // 
@@ -493,7 +473,7 @@
             this.tbComplemento.Location = new System.Drawing.Point(11, 131);
             this.tbComplemento.Name = "tbComplemento";
             this.tbComplemento.Size = new System.Drawing.Size(408, 20);
-            this.tbComplemento.TabIndex = 9;
+            this.tbComplemento.TabIndex = 6;
             // 
             // label8
             // 
@@ -504,22 +484,10 @@
             this.label8.TabIndex = 6;
             this.label8.Text = "Complemento";
             // 
-            // btnBuscarCep
-            // 
-            this.btnBuscarCep.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarCep.Image")));
-            this.btnBuscarCep.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarCep.Location = new System.Drawing.Point(705, 86);
-            this.btnBuscarCep.Name = "btnBuscarCep";
-            this.btnBuscarCep.Size = new System.Drawing.Size(63, 23);
-            this.btnBuscarCep.TabIndex = 8;
-            this.btnBuscarCep.Text = "Buscar";
-            this.btnBuscarCep.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscarCep.UseVisualStyleBackColor = true;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(585, 71);
+            this.label5.Location = new System.Drawing.Point(611, 71);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(28, 13);
             this.label5.TabIndex = 5;
@@ -527,20 +495,20 @@
             // 
             // mtbCep
             // 
-            this.mtbCep.Location = new System.Drawing.Point(588, 87);
+            this.mtbCep.Location = new System.Drawing.Point(613, 87);
             this.mtbCep.Mask = "00000-000";
             this.mtbCep.Name = "mtbCep";
-            this.mtbCep.Size = new System.Drawing.Size(111, 20);
-            this.mtbCep.TabIndex = 7;
+            this.mtbCep.Size = new System.Drawing.Size(155, 20);
+            this.mtbCep.TabIndex = 5;
             this.mtbCep.ValidatingType = typeof(int);
             // 
             // mtbCpf
             // 
-            this.mtbCpf.Location = new System.Drawing.Point(588, 41);
+            this.mtbCpf.Location = new System.Drawing.Point(613, 41);
             this.mtbCpf.Mask = "000.000.000-00";
             this.mtbCpf.Name = "mtbCpf";
-            this.mtbCpf.Size = new System.Drawing.Size(111, 20);
-            this.mtbCpf.TabIndex = 3;
+            this.mtbCpf.Size = new System.Drawing.Size(155, 20);
+            this.mtbCpf.TabIndex = 2;
             this.mtbCpf.ValidatingType = typeof(int);
             // 
             // tbNumero
@@ -548,7 +516,7 @@
             this.tbNumero.Location = new System.Drawing.Point(462, 87);
             this.tbNumero.Name = "tbNumero";
             this.tbNumero.Size = new System.Drawing.Size(111, 20);
-            this.tbNumero.TabIndex = 6;
+            this.tbNumero.TabIndex = 4;
             // 
             // label4
             // 
@@ -564,7 +532,7 @@
             this.tbEndereco.Location = new System.Drawing.Point(11, 87);
             this.tbEndereco.Name = "tbEndereco";
             this.tbEndereco.Size = new System.Drawing.Size(445, 20);
-            this.tbEndereco.TabIndex = 5;
+            this.tbEndereco.TabIndex = 3;
             // 
             // label3
             // 
@@ -575,44 +543,20 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Endereço";
             // 
-            // btnBuscarCpf
-            // 
-            this.btnBuscarCpf.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarCpf.Image")));
-            this.btnBuscarCpf.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarCpf.Location = new System.Drawing.Point(705, 40);
-            this.btnBuscarCpf.Name = "btnBuscarCpf";
-            this.btnBuscarCpf.Size = new System.Drawing.Size(63, 23);
-            this.btnBuscarCpf.TabIndex = 4;
-            this.btnBuscarCpf.Text = "Buscar";
-            this.btnBuscarCpf.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscarCpf.UseVisualStyleBackColor = true;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(585, 24);
+            this.label2.Location = new System.Drawing.Point(611, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "CPF";
             // 
-            // btnBuscarNome
-            // 
-            this.btnBuscarNome.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarNome.Image")));
-            this.btnBuscarNome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarNome.Location = new System.Drawing.Point(513, 40);
-            this.btnBuscarNome.Name = "btnBuscarNome";
-            this.btnBuscarNome.Size = new System.Drawing.Size(63, 23);
-            this.btnBuscarNome.TabIndex = 2;
-            this.btnBuscarNome.Text = "Buscar";
-            this.btnBuscarNome.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscarNome.UseVisualStyleBackColor = true;
-            // 
             // tbNome
             // 
             this.tbNome.Location = new System.Drawing.Point(86, 41);
             this.tbNome.Name = "tbNome";
-            this.tbNome.Size = new System.Drawing.Size(421, 20);
+            this.tbNome.Size = new System.Drawing.Size(487, 20);
             this.tbNome.TabIndex = 1;
             // 
             // label1
@@ -735,7 +679,6 @@
         private System.Windows.Forms.DataGridView dgvFuncionario;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox tbEmail;
-        private System.Windows.Forms.Button btnBuscarEmail;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox tbCidade;
@@ -746,7 +689,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbComplemento;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnBuscarCep;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox mtbCep;
         private System.Windows.Forms.MaskedTextBox mtbCpf;
@@ -754,9 +696,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbEndereco;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnBuscarCpf;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnBuscarNome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnAlterar;

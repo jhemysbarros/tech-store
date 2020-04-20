@@ -7,12 +7,54 @@ namespace TechStore.Controller
 {
     class ProdutoController
     {
-        ProdutoController produtoController = new ProdutoController();
+        ProdutoDAO produtoDAO  = new ProdutoDAO();
         public void Salvar(Produto produto)
         {
             try
             {
-                produtoController.Salvar(produto);
+                produtoDAO.Salvar(produto);
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+        }
+
+        public void Editar(Produto produto)
+        {
+            try
+            {
+                produtoDAO.Editar(produto);
+            }
+            catch (Exception erro)
+            {
+
+                throw erro;
+            }
+        }
+
+        public void Excluir(Produto produto)
+        {
+            try
+            {
+                produtoDAO.Excluir(produto);
+            }
+            catch (Exception erro)
+            {
+
+                throw erro;
+            }
+        }
+
+        public DataTable Listar()
+        {
+            try
+            {
+                DataTable dataTable = new DataTable();
+
+                dataTable = produtoDAO.Listar();
+
+                return dataTable;
             }
             catch (Exception erro)
             {

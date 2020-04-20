@@ -83,5 +83,10 @@ namespace TechStore
             frmCadastrarColaborador.ShowDialog();
             frmCadastrarColaborador.Dispose();
         }
+
+        private void frmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

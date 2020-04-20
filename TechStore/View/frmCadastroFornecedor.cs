@@ -28,7 +28,7 @@ namespace TechStore.View
         {
             if (tbNome.Text.Trim() == string.Empty)
             {
-                MessageBox.Show("Nome não pode estar em branco", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nome do fornecedor não pode estar em branco!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -56,12 +56,11 @@ namespace TechStore.View
             }
         }
 
-
         private void Editar(Fornecedor fornecedor)
         {
             if (tbNome.Text.Trim() == string.Empty)
             {
-                MessageBox.Show("Nome não pode estar em branco", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nome do fornecedor não pode estar em branco!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -130,6 +129,25 @@ namespace TechStore.View
             dgvFornecedor.DataSource = fornecedorController.Listar();
         }
 
+
+        private void Pesquisar(Fornecedor fornecedor)
+        {
+            fornecedor.Nome = tbBucarFornecedor.Text;
+            dgvFornecedor.DataSource = fornecedorController.Pesquisar(fornecedor);
+        }
+
+        private void tbBucarFornecedor_TextChanged(object sender, EventArgs e)
+        {
+            Fornecedor fornecedor = new Fornecedor();
+            Pesquisar(fornecedor);
+
+            if (tbBucarFornecedor.Text == "")
+            {
+                Listar();
+                return;
+            }
+        }
+
         public void Limpar()
         {
             tbId.Clear();
@@ -190,6 +208,9 @@ namespace TechStore.View
             mtbInscEstadual.Text = dgvFornecedor.CurrentRow.Cells[11].Value.ToString();
             mtbInscMunicipal.Text = dgvFornecedor.CurrentRow.Cells[11].Value.ToString();
             tbEmail.Text = dgvFornecedor.CurrentRow.Cells[9].Value.ToString();
+            
+            //Limpar campo de buscar após preencher os campos do fornecedor
+            tbBucarFornecedor.Clear();
         }
     }
 }

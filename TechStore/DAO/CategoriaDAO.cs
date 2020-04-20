@@ -9,7 +9,6 @@ using System.Data;
 
 namespace TechStore.DAO
 {
-
     class CategoriaDAO : Conexao
     {
         SqlCommand comando = null;
@@ -95,6 +94,37 @@ namespace TechStore.DAO
                 comando = new SqlCommand("SELECT * FROM Categoria ORDER BY nome", conexao);
 
                 sqlDataAdapter.SelectCommand = comando;
+
+                sqlDataAdapter.Fill(dataTable);
+
+                return dataTable;
+            }
+            catch (Exception erro)
+            {
+
+                throw erro;
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
+        public DataTable Pesquisar(Categoria categoria)
+        {
+            try
+            {
+                Conectar();
+
+                comando = new SqlCommand("SELECT * FROM Categoria WHERE nome LIKE @nome", conexao);
+
+                comando.Parameters.AddWithValue("@nome", "%" + categoria.nome + "%");
+
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
+
+                sqlDataAdapter.SelectCommand = comando;
+
+                DataTable dataTable = new DataTable();
 
                 sqlDataAdapter.Fill(dataTable);
 

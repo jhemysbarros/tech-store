@@ -133,5 +133,36 @@ namespace TechStore.DAO
                 Desconectar();
             }
         }
+
+        public DataTable Pesquisar(Fornecedor fornecedor)
+        {
+            try
+            {
+                Conectar();
+
+                comando = new SqlCommand("SELECT * FROM Fornecedor WHERE nome LIKE @nome", conexao);
+
+                comando.Parameters.AddWithValue("@nome", "%" + fornecedor.Nome + "%");
+
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
+
+                sqlDataAdapter.SelectCommand = comando;
+
+                DataTable dataTable = new DataTable();
+
+                sqlDataAdapter.Fill(dataTable);
+
+                return dataTable;
+            }
+            catch (Exception erro)
+            {
+
+                throw erro;
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
     }
 }

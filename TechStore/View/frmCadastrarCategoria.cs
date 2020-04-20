@@ -10,7 +10,6 @@ namespace TechStore.View
         private CategoriaController categoriaController = new CategoriaController();
         private Categoria categoria = new Categoria();
 
-
         public frmCadastrarCategoria()
         {
             InitializeComponent();
@@ -22,7 +21,7 @@ namespace TechStore.View
 
             if (tbCategoria.Text.Trim() == string.Empty)
             {
-                MessageBox.Show("Categoria não pode estar em branco", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nome da categoria não pode estar em branco", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 tbCategoria.Focus();
             }
             else
@@ -31,7 +30,7 @@ namespace TechStore.View
 
                 categoriaController.Salvar(categoria);
 
-                MessageBox.Show("Nova categoria salva com sucesso!");
+                MessageBox.Show("Nova categoria cadastrada com sucesso!");
 
                 Limpar();
                 Listar();
@@ -42,7 +41,7 @@ namespace TechStore.View
         {
             if (tbCategoria.Text.Trim() == string.Empty)
             {
-                MessageBox.Show("Categoria não pode estar em branco", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nome da categoria não pode estar em branco", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -84,13 +83,31 @@ namespace TechStore.View
         private void Listar()
         {
             dgvCategoria.DataSource = categoriaController.Listar();
+        }
 
+        private void Pesquisar(Categoria categoria)
+        {
+            categoria.nome = tbBuscarCategoria.Text;
+            dgvCategoria.DataSource = categoriaController.Pesquisar(categoria);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            Categoria categoria = new Categoria();
+            Pesquisar(categoria);
+
+            if (tbBuscarCategoria.Text == "")
+            {
+                Listar();
+                return;
+            }
         }
 
         public void Limpar()
         {
             tbId.Clear();
             tbCategoria.Clear();
+            tbBuscarCategoria.Clear();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -112,14 +129,14 @@ namespace TechStore.View
         {
             // TODO: esta linha de código carrega dados na tabela 'techStoreDataSet.categoria'. Você pode movê-la ou removê-la conforme necessário.
             this.categoriaTableAdapter.Fill(this.techStoreDataSet.categoria);
-            // TODO: esta linha de código carrega dados na tabela 'techStoreDataSet.produto'. Você pode movê-la ou removê-la conforme necessário.
-            //this.categoriaTableAdapter.Fill(this.techStoreDataSet.produto);
         }
 
         private void dgvCategoria_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             tbId.Text = dgvCategoria.CurrentRow.Cells[0].Value.ToString();
             tbCategoria.Text = dgvCategoria.CurrentRow.Cells[1].Value.ToString();
+
+            tbBuscarCategoria.Clear();
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
