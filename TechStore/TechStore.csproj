@@ -47,18 +47,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\CategoriaController.cs" />
+    <Compile Include="Controller\EntradaController.cs" />
     <Compile Include="Controller\FornecedorController.cs" />
     <Compile Include="Controller\FuncionarioController.cs" />
     <Compile Include="Controller\ProdutoController.cs" />
+    <Compile Include="Controller\SaidaController.cs" />
     <Compile Include="DAO\CategoriaDAO.cs" />
     <Compile Include="DAO\Conexao.cs" />
+    <Compile Include="DAO\EntradaDAO.cs" />
     <Compile Include="DAO\FornecedorDAO.cs" />
     <Compile Include="DAO\FuncionarioDAO.cs" />
     <Compile Include="DAO\ProdutoDAO.cs" />
+    <Compile Include="DAO\SaidaDAO.cs" />
     <Compile Include="Model\Categoria.cs" />
+    <Compile Include="Model\Entrada.cs" />
     <Compile Include="Model\Fornecedor.cs" />
     <Compile Include="Model\Funcionario.cs" />
     <Compile Include="Model\Produto.cs" />
+    <Compile Include="Model\Saida.cs" />
     <Compile Include="TechStoreDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

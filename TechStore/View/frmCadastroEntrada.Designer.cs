@@ -30,16 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroEntrada));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSaida = new System.Windows.Forms.Button();
+            this.btnEntrada = new System.Windows.Forms.Button();
+            this.btnEstoque = new System.Windows.Forms.Button();
+            this.btnFornecedor = new System.Windows.Forms.Button();
+            this.btnProduto = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dtpData = new System.Windows.Forms.DateTimePicker();
+            this.tbEntradaId = new System.Windows.Forms.TextBox();
             this.tbTotal = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.tbPreco = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -47,19 +50,14 @@
             this.label8 = new System.Windows.Forms.Label();
             this.rtbObservacao = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.mtbHora = new System.Windows.Forms.MaskedTextBox();
-            this.mtbData = new System.Windows.Forms.MaskedTextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.tbDescricao = new System.Windows.Forms.TextBox();
+            this.tbEntradaDescricao = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbProduto = new System.Windows.Forms.TextBox();
+            this.tbEntradaProduto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tbFornecedor = new System.Windows.Forms.TextBox();
-            this.tbId = new System.Windows.Forms.TextBox();
+            this.tbEntradaFornecedor = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -74,116 +72,120 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnSaida);
+            this.panel1.Controls.Add(this.btnEntrada);
+            this.panel1.Controls.Add(this.btnEstoque);
+            this.panel1.Controls.Add(this.btnFornecedor);
+            this.panel1.Controls.Add(this.btnProduto);
+            this.panel1.Controls.Add(this.btnLimpar);
+            this.panel1.Controls.Add(this.btnSalvar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 380);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(784, 81);
             this.panel1.TabIndex = 0;
             // 
-            // button5
+            // btnSaida
             // 
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button5.Location = new System.Drawing.Point(472, 9);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(66, 65);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Saídas";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnSaida.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaida.Image = ((System.Drawing.Image)(resources.GetObject("btnSaida.Image")));
+            this.btnSaida.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSaida.Location = new System.Drawing.Point(477, 9);
+            this.btnSaida.Name = "btnSaida";
+            this.btnSaida.Size = new System.Drawing.Size(66, 65);
+            this.btnSaida.TabIndex = 6;
+            this.btnSaida.Text = "Saídas";
+            this.btnSaida.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSaida.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnEntrada
             // 
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button7.Location = new System.Drawing.Point(392, 9);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(78, 65);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "Entradas";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnEntrada.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntrada.Image = ((System.Drawing.Image)(resources.GetObject("btnEntrada.Image")));
+            this.btnEntrada.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEntrada.Location = new System.Drawing.Point(393, 9);
+            this.btnEntrada.Name = "btnEntrada";
+            this.btnEntrada.Size = new System.Drawing.Size(82, 65);
+            this.btnEntrada.TabIndex = 5;
+            this.btnEntrada.Text = "Entradas";
+            this.btnEntrada.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEntrada.UseVisualStyleBackColor = true;
+            this.btnEntrada.Click += new System.EventHandler(this.btnEntrada_Click);
             // 
-            // button4
+            // btnEstoque
             // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(317, 9);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(73, 65);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Estoque";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnEstoque.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstoque.Image = ((System.Drawing.Image)(resources.GetObject("btnEstoque.Image")));
+            this.btnEstoque.Location = new System.Drawing.Point(317, 9);
+            this.btnEstoque.Name = "btnEstoque";
+            this.btnEstoque.Size = new System.Drawing.Size(74, 65);
+            this.btnEstoque.TabIndex = 4;
+            this.btnEstoque.Text = "Estoque";
+            this.btnEstoque.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEstoque.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnFornecedor
             // 
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button6.Location = new System.Drawing.Point(222, 9);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(92, 65);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Fornecedores";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnFornecedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnFornecedor.Image = ((System.Drawing.Image)(resources.GetObject("btnFornecedor.Image")));
+            this.btnFornecedor.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnFornecedor.Location = new System.Drawing.Point(151, 9);
+            this.btnFornecedor.Name = "btnFornecedor";
+            this.btnFornecedor.Size = new System.Drawing.Size(92, 65);
+            this.btnFornecedor.TabIndex = 2;
+            this.btnFornecedor.Text = "Fornecedores";
+            this.btnFornecedor.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnFornecedor.UseVisualStyleBackColor = true;
+            this.btnFornecedor.Click += new System.EventHandler(this.btnFornecedor_Click);
             // 
-            // button3
+            // btnProduto
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(150, 9);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(70, 65);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Produto";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnProduto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnProduto.Image")));
+            this.btnProduto.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnProduto.Location = new System.Drawing.Point(245, 9);
+            this.btnProduto.Name = "btnProduto";
+            this.btnProduto.Size = new System.Drawing.Size(70, 65);
+            this.btnProduto.TabIndex = 3;
+            this.btnProduto.Text = "Produto";
+            this.btnProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnProduto.UseVisualStyleBackColor = true;
+            this.btnProduto.Click += new System.EventHandler(this.btnProduto_Click);
             // 
-            // button2
+            // btnLimpar
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(80, 9);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(68, 65);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Limpar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpar.Image")));
+            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnLimpar.Location = new System.Drawing.Point(80, 9);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(68, 65);
+            this.btnLimpar.TabIndex = 1;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
-            // button1
+            // btnSalvar
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(9, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(68, 65);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Registrar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSalvar.Location = new System.Drawing.Point(9, 9);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(68, 65);
+            this.btnSalvar.TabIndex = 0;
+            this.btnSalvar.Text = "Registrar";
+            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // panel2
             // 
@@ -197,7 +199,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.dtpData);
+            this.groupBox2.Controls.Add(this.tbEntradaId);
             this.groupBox2.Controls.Add(this.tbTotal);
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.tbPreco);
             this.groupBox2.Controls.Add(this.label9);
@@ -205,33 +210,54 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.rtbObservacao);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.mtbHora);
-            this.groupBox2.Controls.Add(this.mtbData);
-            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.tbDescricao);
+            this.groupBox2.Controls.Add(this.tbEntradaDescricao);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.tbProduto);
+            this.groupBox2.Controls.Add(this.tbEntradaProduto);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox2.Location = new System.Drawing.Point(3, 85);
+            this.groupBox2.Location = new System.Drawing.Point(3, 73);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(580, 292);
+            this.groupBox2.Size = new System.Drawing.Size(580, 301);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dados do produto";
             // 
+            // dtpData
+            // 
+            this.dtpData.Location = new System.Drawing.Point(389, 79);
+            this.dtpData.Name = "dtpData";
+            this.dtpData.Size = new System.Drawing.Size(185, 20);
+            this.dtpData.TabIndex = 19;
+            // 
+            // tbEntradaId
+            // 
+            this.tbEntradaId.Location = new System.Drawing.Point(12, 36);
+            this.tbEntradaId.Name = "tbEntradaId";
+            this.tbEntradaId.ReadOnly = true;
+            this.tbEntradaId.Size = new System.Drawing.Size(86, 20);
+            this.tbEntradaId.TabIndex = 2;
+            // 
             // tbTotal
             // 
-            this.tbTotal.Location = new System.Drawing.Point(440, 77);
+            this.tbTotal.Location = new System.Drawing.Point(303, 128);
             this.tbTotal.Name = "tbTotal";
             this.tbTotal.Size = new System.Drawing.Size(134, 20);
             this.tbTotal.TabIndex = 18;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(18, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ID";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(437, 61);
+            this.label10.Location = new System.Drawing.Point(300, 112);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(31, 13);
             this.label10.TabIndex = 17;
@@ -239,7 +265,7 @@
             // 
             // tbPreco
             // 
-            this.tbPreco.Location = new System.Drawing.Point(328, 77);
+            this.tbPreco.Location = new System.Drawing.Point(164, 128);
             this.tbPreco.Name = "tbPreco";
             this.tbPreco.Size = new System.Drawing.Size(104, 20);
             this.tbPreco.TabIndex = 16;
@@ -247,7 +273,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(325, 61);
+            this.label9.Location = new System.Drawing.Point(161, 112);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 15;
@@ -255,7 +281,7 @@
             // 
             // tbQuantidade
             // 
-            this.tbQuantidade.Location = new System.Drawing.Point(216, 77);
+            this.tbQuantidade.Location = new System.Drawing.Point(12, 128);
             this.tbQuantidade.Name = "tbQuantidade";
             this.tbQuantidade.Size = new System.Drawing.Size(106, 20);
             this.tbQuantidade.TabIndex = 5;
@@ -263,7 +289,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(213, 61);
+            this.label8.Location = new System.Drawing.Point(9, 112);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(62, 13);
             this.label8.TabIndex = 4;
@@ -271,84 +297,59 @@
             // 
             // rtbObservacao
             // 
-            this.rtbObservacao.Location = new System.Drawing.Point(12, 122);
+            this.rtbObservacao.Location = new System.Drawing.Point(12, 181);
             this.rtbObservacao.Name = "rtbObservacao";
-            this.rtbObservacao.Size = new System.Drawing.Size(562, 164);
+            this.rtbObservacao.Size = new System.Drawing.Size(562, 114);
             this.rtbObservacao.TabIndex = 14;
             this.rtbObservacao.Text = "";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 106);
+            this.label7.Location = new System.Drawing.Point(9, 161);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 13);
             this.label7.TabIndex = 12;
             this.label7.Text = "Observações";
             // 
-            // mtbHora
-            // 
-            this.mtbHora.Location = new System.Drawing.Point(122, 77);
-            this.mtbHora.Mask = "90:00:00";
-            this.mtbHora.Name = "mtbHora";
-            this.mtbHora.Size = new System.Drawing.Size(86, 20);
-            this.mtbHora.TabIndex = 11;
-            this.mtbHora.ValidatingType = typeof(System.DateTime);
-            // 
-            // mtbData
-            // 
-            this.mtbData.Location = new System.Drawing.Point(12, 77);
-            this.mtbData.Mask = "00/00/0000";
-            this.mtbData.Name = "mtbData";
-            this.mtbData.Size = new System.Drawing.Size(72, 20);
-            this.mtbData.TabIndex = 10;
-            this.mtbData.ValidatingType = typeof(System.DateTime);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(119, 61);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(30, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Hora";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 61);
+            this.label5.Location = new System.Drawing.Point(386, 64);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(30, 13);
+            this.label5.Size = new System.Drawing.Size(89, 13);
             this.label5.TabIndex = 3;
-            this.label5.Text = "Data";
+            this.label5.Text = "Selecione a Data";
             // 
-            // tbDescricao
+            // tbEntradaDescricao
             // 
-            this.tbDescricao.Location = new System.Drawing.Point(216, 35);
-            this.tbDescricao.Name = "tbDescricao";
-            this.tbDescricao.Size = new System.Drawing.Size(358, 20);
-            this.tbDescricao.TabIndex = 7;
+            this.tbEntradaDescricao.Location = new System.Drawing.Point(12, 79);
+            this.tbEntradaDescricao.Name = "tbEntradaDescricao";
+            this.tbEntradaDescricao.ReadOnly = true;
+            this.tbEntradaDescricao.Size = new System.Drawing.Size(358, 20);
+            this.tbEntradaDescricao.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(213, 19);
+            this.label4.Location = new System.Drawing.Point(9, 63);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(109, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Descrição do produto";
             // 
-            // tbProduto
+            // tbEntradaProduto
             // 
-            this.tbProduto.Location = new System.Drawing.Point(12, 35);
-            this.tbProduto.Name = "tbProduto";
-            this.tbProduto.Size = new System.Drawing.Size(196, 20);
-            this.tbProduto.TabIndex = 5;
+            this.tbEntradaProduto.Location = new System.Drawing.Point(104, 36);
+            this.tbEntradaProduto.Name = "tbEntradaProduto";
+            this.tbEntradaProduto.ReadOnly = true;
+            this.tbEntradaProduto.Size = new System.Drawing.Size(470, 20);
+            this.tbEntradaProduto.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 19);
+            this.label3.Location = new System.Drawing.Point(101, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 4;
@@ -356,49 +357,32 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.tbFornecedor);
-            this.groupBox1.Controls.Add(this.tbId);
+            this.groupBox1.Controls.Add(this.tbEntradaFornecedor);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox1.Location = new System.Drawing.Point(3, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(580, 79);
+            this.groupBox1.Size = new System.Drawing.Size(580, 69);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados do fornecedor";
             // 
-            // tbFornecedor
+            // tbEntradaFornecedor
             // 
-            this.tbFornecedor.Location = new System.Drawing.Point(122, 38);
-            this.tbFornecedor.Name = "tbFornecedor";
-            this.tbFornecedor.Size = new System.Drawing.Size(452, 20);
-            this.tbFornecedor.TabIndex = 3;
-            // 
-            // tbId
-            // 
-            this.tbId.Location = new System.Drawing.Point(12, 38);
-            this.tbId.Name = "tbId";
-            this.tbId.Size = new System.Drawing.Size(86, 20);
-            this.tbId.TabIndex = 2;
+            this.tbEntradaFornecedor.Location = new System.Drawing.Point(12, 38);
+            this.tbEntradaFornecedor.Name = "tbEntradaFornecedor";
+            this.tbEntradaFornecedor.ReadOnly = true;
+            this.tbEntradaFornecedor.Size = new System.Drawing.Size(562, 20);
+            this.tbEntradaFornecedor.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(119, 22);
+            this.label2.Location = new System.Drawing.Point(9, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Fornecedor";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID";
             // 
             // panel3
             // 
@@ -454,30 +438,23 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnProduto;
+        private System.Windows.Forms.Button btnFornecedor;
+        private System.Windows.Forms.Button btnEstoque;
+        private System.Windows.Forms.Button btnSaida;
+        private System.Windows.Forms.Button btnEntrada;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox tbDescricao;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbProduto;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbFornecedor;
-        private System.Windows.Forms.TextBox tbId;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox mtbHora;
-        private System.Windows.Forms.MaskedTextBox mtbData;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RichTextBox rtbObservacao;
         private System.Windows.Forms.Label label7;
@@ -487,5 +464,10 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox tbQuantidade;
         private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.TextBox tbEntradaId;
+        public System.Windows.Forms.TextBox tbEntradaProduto;
+        public System.Windows.Forms.TextBox tbEntradaDescricao;
+        public System.Windows.Forms.TextBox tbEntradaFornecedor;
+        private System.Windows.Forms.DateTimePicker dtpData;
     }
 }

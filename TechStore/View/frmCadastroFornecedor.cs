@@ -15,8 +15,19 @@ namespace TechStore.View
 {
     public partial class frmCadastroFornecedor : Form
     {
+        frmCadastroEntrada entrada;
+
         private FornecedorController fornecedorController = new FornecedorController();
         private Fornecedor fornecedor = new Fornecedor();
+
+        public frmCadastroFornecedor(frmCadastroEntrada frmCadastroEntrada)
+        {
+            InitializeComponent();
+
+            entrada = frmCadastroEntrada;
+
+            tbNome.Text = entrada.tbEntradaFornecedor.Text.ToString();
+        }
 
         public frmCadastroFornecedor()
         {
@@ -194,6 +205,13 @@ namespace TechStore.View
 
         private void dgvFornecedor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            entrada.tbEntradaFornecedor.Text = tbNome.Text = dgvFornecedor.CurrentRow.Cells[1].Value.ToString();
+
+            this.Hide();
+        }
+
+        private void dgvFornecedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
             tbId.Text = dgvFornecedor.CurrentRow.Cells[0].Value.ToString();
             tbNome.Text = dgvFornecedor.CurrentRow.Cells[1].Value.ToString();
             mtbCnpj.Text = dgvFornecedor.CurrentRow.Cells[2].Value.ToString();
@@ -208,7 +226,7 @@ namespace TechStore.View
             mtbInscEstadual.Text = dgvFornecedor.CurrentRow.Cells[11].Value.ToString();
             mtbInscMunicipal.Text = dgvFornecedor.CurrentRow.Cells[11].Value.ToString();
             tbEmail.Text = dgvFornecedor.CurrentRow.Cells[9].Value.ToString();
-            
+
             //Limpar campo de buscar após preencher os campos do fornecedor
             tbBucarFornecedor.Clear();
         }

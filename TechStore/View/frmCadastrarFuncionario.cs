@@ -13,7 +13,6 @@ namespace TechStore.View
         public frmCadastrarFuncionario()
         {
             InitializeComponent();
-            Listar();
         }
 
         private void Salvar(Funcionario funcionario)
@@ -44,7 +43,6 @@ namespace TechStore.View
                 MessageBox.Show("Novo funcionário salvo com sucesso!");
 
                 Limpar();
-                Listar();
             }
         }
 
@@ -76,7 +74,6 @@ namespace TechStore.View
                 MessageBox.Show("Funcionario alterado com sucesso!");
 
                 Limpar();
-                Listar();
             }
         }
 
@@ -112,13 +109,7 @@ namespace TechStore.View
                 MessageBox.Show("Funcionário excluido com sucesso!");
 
                 Limpar();
-                Listar();
             }
-        }
-
-        private void Listar()
-        {
-            dgvFuncionario.DataSource = funcionarioController.Listar();
         }
 
         private void Pesquisar(Funcionario funcionario)
@@ -134,7 +125,7 @@ namespace TechStore.View
 
             if (tbBuscarNome.Text == "")
             {
-                Listar();
+                //Listar();
                 return;
             }
         }
@@ -184,6 +175,11 @@ namespace TechStore.View
         }
 
         private void dgvFuncionario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvFuncionario_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             tbId.Text = dgvFuncionario.CurrentRow.Cells[0].Value.ToString();
             tbNome.Text = dgvFuncionario.CurrentRow.Cells[1].Value.ToString();

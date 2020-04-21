@@ -109,6 +109,7 @@
             this.dgvProduto.ReadOnly = true;
             this.dgvProduto.Size = new System.Drawing.Size(582, 182);
             this.dgvProduto.TabIndex = 6;
+            this.dgvProduto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduto_CellContentClick);
             this.dgvProduto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduto_CellDoubleClick);
             // 
             // dataGridViewTextBoxColumn1
@@ -451,11 +452,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox tbPreco;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbDescricao;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbProduto;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvProduto;
         private System.Windows.Forms.Button button1;
@@ -473,5 +471,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.BindingSource produtoBindingSource2;
+        public System.Windows.Forms.TextBox tbId;
+        public System.Windows.Forms.TextBox tbProduto;
+        public System.Windows.Forms.TextBox tbDescricao;
     }
 }

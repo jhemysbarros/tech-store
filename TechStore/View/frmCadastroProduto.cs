@@ -7,9 +7,22 @@ namespace TechStore.View
 {
     public partial class frmCadastroProduto : Form
     {
+        frmCadastroEntrada entrada;
+
         private ProdutoController produtoController = new ProdutoController();
         private CategoriaController categoriaController = new CategoriaController();
         private Produto produto = new Produto();
+
+        public frmCadastroProduto(frmCadastroEntrada frmCadastroEntrada)
+        {
+            InitializeComponent();
+
+            entrada = frmCadastroEntrada;
+
+            tbId.Text = entrada.tbEntradaId.Text.ToString();
+            tbProduto.Text = entrada.tbEntradaProduto.Text.ToString();
+            tbDescricao.Text = entrada.tbEntradaDescricao.Text.ToString();
+        }
 
         public frmCadastroProduto()
         {
@@ -117,7 +130,7 @@ namespace TechStore.View
             tbProduto.Clear();
             tbDescricao.Clear();
             tbPreco.Clear();
-            cbCategoria.SelectedIndex = -1; 
+            cbCategoria.SelectedIndex = -1;
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -148,11 +161,20 @@ namespace TechStore.View
 
         private void dgvProduto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            entrada.tbEntradaId.Text = tbId.Text = dgvProduto.CurrentRow.Cells[0].Value.ToString();
+            entrada.tbEntradaProduto.Text = tbProduto.Text = dgvProduto.CurrentRow.Cells[1].Value.ToString();
+            entrada.tbEntradaDescricao.Text = tbDescricao.Text = dgvProduto.CurrentRow.Cells[2].Value.ToString();
+
+            this.Hide();
+        }
+
+        private void dgvProduto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
             tbId.Text = dgvProduto.CurrentRow.Cells[0].Value.ToString();
             tbProduto.Text = dgvProduto.CurrentRow.Cells[1].Value.ToString();
             tbDescricao.Text = dgvProduto.CurrentRow.Cells[2].Value.ToString();
             tbPreco.Text = dgvProduto.CurrentRow.Cells[3].Value.ToString();
-            cbCategoria.SelectedValue = dgvProduto.CurrentRow.Cells[4].Value.ToString();            
-        }        
+            cbCategoria.SelectedValue = dgvProduto.CurrentRow.Cells[4].Value.ToString();
+        }
     }
 }

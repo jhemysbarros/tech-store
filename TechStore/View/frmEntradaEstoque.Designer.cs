@@ -28,13 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntradaEstoque));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvEntradaEstoque = new System.Windows.Forms.DataGridView();
+            this.identradaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fornecedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idprodutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.produtoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.entradaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.techStoreDataSet = new TechStore.TechStoreDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBuscarProduto = new System.Windows.Forms.Button();
             this.tbProduto = new System.Windows.Forms.TextBox();
@@ -42,74 +54,58 @@
             this.btnBuscarId = new System.Windows.Forms.Button();
             this.tbId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.tbValorTotal = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tbQtdTotal = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tbItens = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.entradaTableAdapter = new TechStore.TechStoreDataSetTableAdapters.entradaTableAdapter();
+            this.entradaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEntradaEstoque)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.entradaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.techStoreDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.entradaBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnLimpar);
+            this.panel1.Controls.Add(this.btnExcluir);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(784, 73);
             this.panel1.TabIndex = 2;
             // 
-            // button3
+            // btnLimpar
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(152, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(68, 65);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Limpar";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpar.Image")));
+            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnLimpar.Location = new System.Drawing.Point(81, 2);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(68, 65);
+            this.btnLimpar.TabIndex = 4;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
-            // button1
+            // btnExcluir
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(78, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(68, 65);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Excluir";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(4, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(68, 65);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Listar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExcluir.Location = new System.Drawing.Point(7, 3);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(68, 65);
+            this.btnExcluir.TabIndex = 3;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.dgvEntradaEstoque);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 73);
@@ -117,16 +113,111 @@
             this.panel2.Size = new System.Drawing.Size(784, 388);
             this.panel2.TabIndex = 4;
             // 
-            // dataGridView1
+            // dgvEntradaEstoque
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 85);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(777, 233);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvEntradaEstoque.AllowUserToAddRows = false;
+            this.dgvEntradaEstoque.AllowUserToDeleteRows = false;
+            this.dgvEntradaEstoque.AutoGenerateColumns = false;
+            this.dgvEntradaEstoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEntradaEstoque.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.identradaDataGridViewTextBoxColumn,
+            this.fornecedorDataGridViewTextBoxColumn,
+            this.idprodutoDataGridViewTextBoxColumn,
+            this.produtoDataGridViewTextBoxColumn,
+            this.descricaoDataGridViewTextBoxColumn,
+            this.dataDataGridViewTextBoxColumn,
+            this.quantidadeDataGridViewTextBoxColumn,
+            this.precoDataGridViewTextBoxColumn,
+            this.totalDataGridViewTextBoxColumn,
+            this.observacaoDataGridViewTextBoxColumn});
+            this.dgvEntradaEstoque.DataSource = this.entradaBindingSource1;
+            this.dgvEntradaEstoque.Location = new System.Drawing.Point(4, 85);
+            this.dgvEntradaEstoque.Name = "dgvEntradaEstoque";
+            this.dgvEntradaEstoque.ReadOnly = true;
+            this.dgvEntradaEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEntradaEstoque.Size = new System.Drawing.Size(777, 291);
+            this.dgvEntradaEstoque.TabIndex = 1;
+            this.dgvEntradaEstoque.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEntradaEstoque_CellDoubleClick);
+            // 
+            // identradaDataGridViewTextBoxColumn
+            // 
+            this.identradaDataGridViewTextBoxColumn.DataPropertyName = "identrada";
+            this.identradaDataGridViewTextBoxColumn.HeaderText = "identrada";
+            this.identradaDataGridViewTextBoxColumn.Name = "identradaDataGridViewTextBoxColumn";
+            this.identradaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fornecedorDataGridViewTextBoxColumn
+            // 
+            this.fornecedorDataGridViewTextBoxColumn.DataPropertyName = "fornecedor";
+            this.fornecedorDataGridViewTextBoxColumn.HeaderText = "fornecedor";
+            this.fornecedorDataGridViewTextBoxColumn.Name = "fornecedorDataGridViewTextBoxColumn";
+            this.fornecedorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idprodutoDataGridViewTextBoxColumn
+            // 
+            this.idprodutoDataGridViewTextBoxColumn.DataPropertyName = "idproduto";
+            this.idprodutoDataGridViewTextBoxColumn.HeaderText = "idproduto";
+            this.idprodutoDataGridViewTextBoxColumn.Name = "idprodutoDataGridViewTextBoxColumn";
+            this.idprodutoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // produtoDataGridViewTextBoxColumn
+            // 
+            this.produtoDataGridViewTextBoxColumn.DataPropertyName = "produto";
+            this.produtoDataGridViewTextBoxColumn.HeaderText = "produto";
+            this.produtoDataGridViewTextBoxColumn.Name = "produtoDataGridViewTextBoxColumn";
+            this.produtoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descricaoDataGridViewTextBoxColumn
+            // 
+            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "descricao";
+            this.descricaoDataGridViewTextBoxColumn.HeaderText = "descricao";
+            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
+            this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataDataGridViewTextBoxColumn
+            // 
+            this.dataDataGridViewTextBoxColumn.DataPropertyName = "data";
+            this.dataDataGridViewTextBoxColumn.HeaderText = "data";
+            this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
+            this.dataDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // quantidadeDataGridViewTextBoxColumn
+            // 
+            this.quantidadeDataGridViewTextBoxColumn.DataPropertyName = "quantidade";
+            this.quantidadeDataGridViewTextBoxColumn.HeaderText = "quantidade";
+            this.quantidadeDataGridViewTextBoxColumn.Name = "quantidadeDataGridViewTextBoxColumn";
+            this.quantidadeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // precoDataGridViewTextBoxColumn
+            // 
+            this.precoDataGridViewTextBoxColumn.DataPropertyName = "preco";
+            this.precoDataGridViewTextBoxColumn.HeaderText = "preco";
+            this.precoDataGridViewTextBoxColumn.Name = "precoDataGridViewTextBoxColumn";
+            this.precoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // totalDataGridViewTextBoxColumn
+            // 
+            this.totalDataGridViewTextBoxColumn.DataPropertyName = "total";
+            this.totalDataGridViewTextBoxColumn.HeaderText = "total";
+            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+            this.totalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // observacaoDataGridViewTextBoxColumn
+            // 
+            this.observacaoDataGridViewTextBoxColumn.DataPropertyName = "observacao";
+            this.observacaoDataGridViewTextBoxColumn.HeaderText = "observacao";
+            this.observacaoDataGridViewTextBoxColumn.Name = "observacaoDataGridViewTextBoxColumn";
+            this.observacaoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // entradaBindingSource
+            // 
+            this.entradaBindingSource.DataMember = "entrada";
+            this.entradaBindingSource.DataSource = this.techStoreDataSet;
+            // 
+            // techStoreDataSet
+            // 
+            this.techStoreDataSet.DataSetName = "TechStoreDataSet";
+            this.techStoreDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox1
             // 
@@ -150,7 +241,7 @@
             this.btnBuscarProduto.Location = new System.Drawing.Point(692, 40);
             this.btnBuscarProduto.Name = "btnBuscarProduto";
             this.btnBuscarProduto.Size = new System.Drawing.Size(63, 23);
-            this.btnBuscarProduto.TabIndex = 5;
+            this.btnBuscarProduto.TabIndex = 3;
             this.btnBuscarProduto.Text = "Buscar";
             this.btnBuscarProduto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscarProduto.UseVisualStyleBackColor = true;
@@ -159,8 +250,9 @@
             // 
             this.tbProduto.Location = new System.Drawing.Point(222, 41);
             this.tbProduto.Name = "tbProduto";
+            this.tbProduto.ReadOnly = true;
             this.tbProduto.Size = new System.Drawing.Size(464, 20);
-            this.tbProduto.TabIndex = 4;
+            this.tbProduto.TabIndex = 2;
             // 
             // label2
             // 
@@ -178,7 +270,7 @@
             this.btnBuscarId.Location = new System.Drawing.Point(136, 40);
             this.btnBuscarId.Name = "btnBuscarId";
             this.btnBuscarId.Size = new System.Drawing.Size(63, 23);
-            this.btnBuscarId.TabIndex = 2;
+            this.btnBuscarId.TabIndex = 1;
             this.btnBuscarId.Text = "Buscar";
             this.btnBuscarId.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscarId.UseVisualStyleBackColor = true;
@@ -187,8 +279,9 @@
             // 
             this.tbId.Location = new System.Drawing.Point(11, 41);
             this.tbId.Name = "tbId";
+            this.tbId.ReadOnly = true;
             this.tbId.Size = new System.Drawing.Size(119, 20);
-            this.tbId.TabIndex = 1;
+            this.tbId.TabIndex = 0;
             // 
             // label1
             // 
@@ -199,74 +292,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
-            // panel3
+            // entradaTableAdapter
             // 
-            this.panel3.Controls.Add(this.tbValorTotal);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.tbQtdTotal);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.tbItens);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 410);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(784, 51);
-            this.panel3.TabIndex = 5;
+            this.entradaTableAdapter.ClearBeforeFill = true;
             // 
-            // tbValorTotal
+            // entradaBindingSource1
             // 
-            this.tbValorTotal.Location = new System.Drawing.Point(273, 26);
-            this.tbValorTotal.Name = "tbValorTotal";
-            this.tbValorTotal.Size = new System.Drawing.Size(178, 20);
-            this.tbValorTotal.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(270, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Valor Total";
-            // 
-            // tbQtdTotal
-            // 
-            this.tbQtdTotal.Location = new System.Drawing.Point(114, 26);
-            this.tbQtdTotal.Name = "tbQtdTotal";
-            this.tbQtdTotal.Size = new System.Drawing.Size(153, 20);
-            this.tbQtdTotal.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(111, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Quantidade Total";
-            // 
-            // tbItens
-            // 
-            this.tbItens.Location = new System.Drawing.Point(12, 26);
-            this.tbItens.Name = "tbItens";
-            this.tbItens.Size = new System.Drawing.Size(96, 20);
-            this.tbItens.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Itens";
+            this.entradaBindingSource1.DataMember = "entrada";
+            this.entradaBindingSource1.DataSource = this.techStoreDataSet;
             // 
             // frmEntradaEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmEntradaEstoque";
@@ -274,22 +313,22 @@
             this.Text = "Relação de Entrada de Estoque";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEntradaEstoque)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.entradaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.techStoreDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.entradaBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvEntradaEstoque;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnBuscarProduto;
         private System.Windows.Forms.TextBox tbProduto;
@@ -297,12 +336,19 @@
         private System.Windows.Forms.Button btnBuscarId;
         private System.Windows.Forms.TextBox tbId;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox tbItens;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbValorTotal;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tbQtdTotal;
-        private System.Windows.Forms.Label label4;
+        private TechStoreDataSet techStoreDataSet;
+        private System.Windows.Forms.BindingSource entradaBindingSource;
+        private TechStoreDataSetTableAdapters.entradaTableAdapter entradaTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn identradaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fornecedorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idprodutoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn produtoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn observacaoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource entradaBindingSource1;
     }
 }
