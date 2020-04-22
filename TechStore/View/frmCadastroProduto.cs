@@ -2,11 +2,16 @@
 using System.Windows.Forms;
 using TechStore.Model;
 using TechStore.Controller;
+using System.Drawing;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace TechStore.View
 {
     public partial class frmCadastroProduto : Form
     {
+        Bitmap bitmap;
+
         frmCadastroEntrada entrada;
 
         private ProdutoController produtoController = new ProdutoController();
@@ -39,10 +44,18 @@ namespace TechStore.View
             }
             else
             {
+                MemoryStream memory = new MemoryStream();
+
+                bitmap.Save(memory, ImageFormat.Bmp);
+
+                byte[] foto = memory.ToArray();
+
                 produto.Nome = tbProduto.Text;
                 produto.Descricao = tbDescricao.Text;
                 produto.Preco = Convert.ToDecimal(tbPreco.Text);
+                produto.Imagem = foto;
                 produto.Idcategoria = Convert.ToInt32(cbCategoria.SelectedValue);
+
 
                 produtoController.Salvar(produto);
 
@@ -66,10 +79,16 @@ namespace TechStore.View
             }
             else
             {
-                produto.Id = Convert.ToInt32(tbId.Text);
+                MemoryStream memory = new MemoryStream();
+
+                bitmap.Save(memory, ImageFormat.Bmp);
+
+                byte[] foto = memory.ToArray();
+
                 produto.Nome = tbProduto.Text;
                 produto.Descricao = tbDescricao.Text;
                 produto.Preco = Convert.ToDecimal(tbPreco.Text);
+                produto.Imagem = foto;
                 produto.Idcategoria = Convert.ToInt32(cbCategoria.SelectedValue);
 
                 produtoController.Editar(produto);
@@ -98,12 +117,18 @@ namespace TechStore.View
             }
             else
             {
+                MemoryStream memory = new MemoryStream();
+
+                bitmap.Save(memory, ImageFormat.Bmp);
+
+                byte[] foto = memory.ToArray();
+
                 produto.Id = Convert.ToInt32(tbId.Text);
                 produto.Nome = tbProduto.Text;
                 produto.Descricao = tbDescricao.Text;
                 produto.Preco = Convert.ToDecimal(tbPreco.Text);
+                produto.Imagem = foto;
                 produto.Idcategoria = Convert.ToInt32(cbCategoria.SelectedValue);
-
 
                 produtoController.Excluir(produto);
 
@@ -119,6 +144,18 @@ namespace TechStore.View
             Excluir(produto);
         }
 
+        private void Pesquisar(Produto produto)
+        {
+            produto.Idcategoria = Convert.ToInt32(cbBuscaCategoria.SelectedValue);
+            dgvProduto.DataSource = produtoController.Pesquisar(produto);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Produto produto = new Produto();
+            Pesquisar(produto);
+        }
+
         private void Listar()
         {
             dgvProduto.DataSource = produtoController.Listar();
@@ -130,6 +167,7 @@ namespace TechStore.View
             tbProduto.Clear();
             tbDescricao.Clear();
             tbPreco.Clear();
+            pbProduto.Image = null;
             cbCategoria.SelectedIndex = -1;
         }
 
@@ -150,6 +188,10 @@ namespace TechStore.View
             cbCategoria.DataSource = categoriaController.Listar();
             cbCategoria.ValueMember = "idcategoria";
             cbCategoria.DisplayMember = "nome";
+
+            cbBuscaCategoria.DataSource = categoriaController.Listar();
+            cbBuscaCategoria.ValueMember = "idcategoria";
+            cbBuscaCategoria.DisplayMember = "nome";
 
             // TODO: esta linha de código carrega dados na tabela 'techStoreDataSet.produto'. Você pode movê-la ou removê-la conforme necessário.
             this.produtoTableAdapter.Fill(this.techStoreDataSet.produto);
@@ -174,7 +216,25 @@ namespace TechStore.View
             tbProduto.Text = dgvProduto.CurrentRow.Cells[1].Value.ToString();
             tbDescricao.Text = dgvProduto.CurrentRow.Cells[2].Value.ToString();
             tbPreco.Text = dgvProduto.CurrentRow.Cells[3].Value.ToString();
-            cbCategoria.SelectedValue = dgvProduto.CurrentRow.Cells[4].Value.ToString();
+            cbCategoria.SelectedValue = dgvProduto.CurrentRow.Cells[5].Value.ToString();
+        }
+
+        private void btnSelecionarImagem_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string nome = openFileDialog.FileName;
+
+                bitmap = new Bitmap(nome);
+
+                pbProduto.Image = bitmap;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            pbProduto.Image.Dispose();
+            pbProduto.Image = null;
         }
     }
 }

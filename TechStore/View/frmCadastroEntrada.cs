@@ -49,7 +49,6 @@ namespace TechStore
             tbEntradaFornecedor.Clear();
             tbEntradaProduto.Clear();
             tbEntradaDescricao.Clear();
-            //dtpData.Value = null;
             tbQuantidade.Clear();
             tbPreco.Clear();
             tbTotal.Clear();
@@ -82,6 +81,18 @@ namespace TechStore
         {
             frmEntradaEstoque frmEntradaEstoque = new frmEntradaEstoque();
             frmEntradaEstoque.ShowDialog();
+        }
+
+        private void btnSaida_Click(object sender, EventArgs e)
+        {
+            frmSaidaEstoque frmSaidaEstoque = new frmSaidaEstoque();
+            frmSaidaEstoque.ShowDialog();
+        }
+
+        private void btnEstoque_Click(object sender, EventArgs e)
+        {
+            frmEstoque frmEstoque = new frmEstoque();
+            frmEstoque.ShowDialog();
         }
     }
 }

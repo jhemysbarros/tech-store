@@ -42,6 +42,7 @@ namespace TechStore.View
 
                 MessageBox.Show("Novo funcionário salvo com sucesso!");
 
+                Listar();
                 Limpar();
             }
         }
@@ -73,6 +74,7 @@ namespace TechStore.View
 
                 MessageBox.Show("Funcionario alterado com sucesso!");
 
+                Listar();
                 Limpar();
             }
         }
@@ -108,8 +110,14 @@ namespace TechStore.View
 
                 MessageBox.Show("Funcionário excluido com sucesso!");
 
+                Listar();
                 Limpar();
             }
+        }
+
+        private void Listar()
+        {
+            dgvFuncionario.DataSource = funcionarioController.Listar();
         }
 
         private void Pesquisar(Funcionario funcionario)
@@ -125,7 +133,7 @@ namespace TechStore.View
 
             if (tbBuscarNome.Text == "")
             {
-                //Listar();
+                Listar();
                 return;
             }
         }
@@ -161,7 +169,7 @@ namespace TechStore.View
         private void frmCadastrarFuncionario_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'techStoreDataSet.funcionario'. Você pode movê-la ou removê-la conforme necessário.
-            this.funcionarioTableAdapter.Fill(this.techStoreDataSet.funcionario);
+            this.funcionarioTableAdapter.Fill(this.techStoreDataSet.funcionario);            
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)

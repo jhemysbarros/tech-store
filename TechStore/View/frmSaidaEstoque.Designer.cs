@@ -71,7 +71,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Image = global::TechStore.Properties.Resources.calcel;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button3.Location = new System.Drawing.Point(81, 2);
             this.button3.Name = "button3";
@@ -85,7 +85,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Image = global::TechStore.Properties.Resources.delete;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button1.Location = new System.Drawing.Point(7, 3);
             this.button1.Name = "button1";
@@ -121,6 +121,7 @@
             this.dgvSaidaProduto.Location = new System.Drawing.Point(4, 85);
             this.dgvSaidaProduto.Name = "dgvSaidaProduto";
             this.dgvSaidaProduto.ReadOnly = true;
+            this.dgvSaidaProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSaidaProduto.Size = new System.Drawing.Size(553, 291);
             this.dgvSaidaProduto.TabIndex = 1;
             // 
@@ -251,6 +252,8 @@
             this.ClientSize = new System.Drawing.Size(564, 461);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmSaidaEstoque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relação de Saida Estoque";

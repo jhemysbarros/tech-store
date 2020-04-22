@@ -61,5 +61,22 @@ namespace TechStore.Controller
                 throw erro;
             }
         }
+
+        public object Pesquisar(Produto produto)
+        {
+            try
+            {
+                DataTable dataTable = new DataTable();
+
+                dataTable = produtoDAO.Pesquisar(produto);
+
+                return dataTable;
+            }
+            catch (Exception erro)
+            {
+
+                throw erro;
+            }
+        }
     }
 }

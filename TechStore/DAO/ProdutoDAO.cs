@@ -18,11 +18,12 @@ namespace TechStore.DAO
             {
                 Conectar();
 
-                comando = new SqlCommand("INSERT INTO Produto(produto, descricao, preco, fk_categoria) VALUES (@nome, @descricao, @preco, @idcategoria)", conexao);
+                comando = new SqlCommand("INSERT INTO Produto(produto, descricao, preco, imagem, fk_categoria) VALUES (@nome, @descricao, @preco, @imagem, @idcategoria)", conexao);
 
                 comando.Parameters.AddWithValue("@nome", produto.Nome);
                 comando.Parameters.AddWithValue("@descricao", produto.Descricao);
                 comando.Parameters.AddWithValue("@preco", produto.Preco);
+                comando.Parameters.AddWithValue("@imagem", produto.Imagem);
                 comando.Parameters.AddWithValue("@idcategoria", produto.Idcategoria);
 
                 comando.ExecuteNonQuery();
@@ -44,12 +45,13 @@ namespace TechStore.DAO
             {
                 Conectar();
 
-                comando = new SqlCommand("UPDATE Produto set produto = @produto, descricao = @descricao, preco = @preco, fk_categoria = @idcategoria WHERE idproduto = @id", conexao);
+                comando = new SqlCommand("UPDATE Produto set produto = @produto, descricao = @descricao, preco = @preco, imagem = @imagem, fk_categoria = @idcategoria WHERE idproduto = @id", conexao);
 
                 comando.Parameters.AddWithValue("@id", produto.Id);
-                comando.Parameters.AddWithValue("@produto", produto.Nome);
+                comando.Parameters.AddWithValue("@nome", produto.Nome);
                 comando.Parameters.AddWithValue("@descricao", produto.Descricao);
                 comando.Parameters.AddWithValue("@preco", produto.Preco);
+                comando.Parameters.AddWithValue("@imagem", produto.Imagem);
                 comando.Parameters.AddWithValue("@idcategoria", produto.Idcategoria);
 
                 comando.ExecuteNonQuery();
@@ -100,6 +102,37 @@ namespace TechStore.DAO
                 comando = new SqlCommand("SELECT * FROM Produto ORDER BY produto", conexao);
 
                 sqlDataAdapter.SelectCommand = comando;
+
+                sqlDataAdapter.Fill(dataTable);
+
+                return dataTable;
+            }
+            catch (Exception erro)
+            {
+
+                throw erro;
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
+
+        public DataTable Pesquisar(Produto produto)
+        {
+            try
+            {
+                Conectar();
+
+                comando = new SqlCommand("SELECT * FROM Produto WHERE fk_categoria LIKE @idcategoria", conexao);
+
+                comando.Parameters.AddWithValue("@idcategoria", produto.Idcategoria);
+
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
+
+                sqlDataAdapter.SelectCommand = comando;
+
+                DataTable dataTable = new DataTable();
 
                 sqlDataAdapter.Fill(dataTable);
 

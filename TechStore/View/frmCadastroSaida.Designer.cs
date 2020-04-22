@@ -62,7 +62,7 @@
             // btnLimpar
             // 
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpar.Image")));
+            this.btnLimpar.Image = global::TechStore.Properties.Resources.calcel;
             this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnLimpar.Location = new System.Drawing.Point(75, 4);
             this.btnLimpar.Name = "btnLimpar";
@@ -76,7 +76,7 @@
             // btnRegistrar
             // 
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrar.Image")));
+            this.btnRegistrar.Image = global::TechStore.Properties.Resources.create;
             this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnRegistrar.Location = new System.Drawing.Point(4, 4);
             this.btnRegistrar.Name = "btnRegistrar";
@@ -210,6 +210,8 @@
             this.ClientSize = new System.Drawing.Size(594, 261);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCadastroSaida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Saida";

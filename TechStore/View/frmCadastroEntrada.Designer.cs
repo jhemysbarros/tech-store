@@ -28,15 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroEntrada));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSaida = new System.Windows.Forms.Button();
-            this.btnEntrada = new System.Windows.Forms.Button();
-            this.btnEstoque = new System.Windows.Forms.Button();
-            this.btnFornecedor = new System.Windows.Forms.Button();
-            this.btnProduto = new System.Windows.Forms.Button();
-            this.btnLimpar = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtpData = new System.Windows.Forms.DateTimePicker();
@@ -61,6 +53,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSaida = new System.Windows.Forms.Button();
+            this.btnEntrada = new System.Windows.Forms.Button();
+            this.btnEstoque = new System.Windows.Forms.Button();
+            this.btnFornecedor = new System.Windows.Forms.Button();
+            this.btnProduto = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -84,108 +83,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(784, 81);
             this.panel1.TabIndex = 0;
-            // 
-            // btnSaida
-            // 
-            this.btnSaida.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaida.Image = ((System.Drawing.Image)(resources.GetObject("btnSaida.Image")));
-            this.btnSaida.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSaida.Location = new System.Drawing.Point(477, 9);
-            this.btnSaida.Name = "btnSaida";
-            this.btnSaida.Size = new System.Drawing.Size(66, 65);
-            this.btnSaida.TabIndex = 6;
-            this.btnSaida.Text = "Saídas";
-            this.btnSaida.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSaida.UseVisualStyleBackColor = true;
-            // 
-            // btnEntrada
-            // 
-            this.btnEntrada.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntrada.Image = ((System.Drawing.Image)(resources.GetObject("btnEntrada.Image")));
-            this.btnEntrada.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEntrada.Location = new System.Drawing.Point(393, 9);
-            this.btnEntrada.Name = "btnEntrada";
-            this.btnEntrada.Size = new System.Drawing.Size(82, 65);
-            this.btnEntrada.TabIndex = 5;
-            this.btnEntrada.Text = "Entradas";
-            this.btnEntrada.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEntrada.UseVisualStyleBackColor = true;
-            this.btnEntrada.Click += new System.EventHandler(this.btnEntrada_Click);
-            // 
-            // btnEstoque
-            // 
-            this.btnEstoque.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstoque.Image = ((System.Drawing.Image)(resources.GetObject("btnEstoque.Image")));
-            this.btnEstoque.Location = new System.Drawing.Point(317, 9);
-            this.btnEstoque.Name = "btnEstoque";
-            this.btnEstoque.Size = new System.Drawing.Size(74, 65);
-            this.btnEstoque.TabIndex = 4;
-            this.btnEstoque.Text = "Estoque";
-            this.btnEstoque.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEstoque.UseVisualStyleBackColor = true;
-            // 
-            // btnFornecedor
-            // 
-            this.btnFornecedor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnFornecedor.Image = ((System.Drawing.Image)(resources.GetObject("btnFornecedor.Image")));
-            this.btnFornecedor.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFornecedor.Location = new System.Drawing.Point(151, 9);
-            this.btnFornecedor.Name = "btnFornecedor";
-            this.btnFornecedor.Size = new System.Drawing.Size(92, 65);
-            this.btnFornecedor.TabIndex = 2;
-            this.btnFornecedor.Text = "Fornecedores";
-            this.btnFornecedor.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnFornecedor.UseVisualStyleBackColor = true;
-            this.btnFornecedor.Click += new System.EventHandler(this.btnFornecedor_Click);
-            // 
-            // btnProduto
-            // 
-            this.btnProduto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnProduto.Image")));
-            this.btnProduto.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnProduto.Location = new System.Drawing.Point(245, 9);
-            this.btnProduto.Name = "btnProduto";
-            this.btnProduto.Size = new System.Drawing.Size(70, 65);
-            this.btnProduto.TabIndex = 3;
-            this.btnProduto.Text = "Produto";
-            this.btnProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnProduto.UseVisualStyleBackColor = true;
-            this.btnProduto.Click += new System.EventHandler(this.btnProduto_Click);
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpar.Image")));
-            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnLimpar.Location = new System.Drawing.Point(80, 9);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(68, 65);
-            this.btnLimpar.TabIndex = 1;
-            this.btnLimpar.Text = "Limpar";
-            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnLimpar.UseVisualStyleBackColor = true;
-            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSalvar.Location = new System.Drawing.Point(9, 9);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(68, 65);
-            this.btnSalvar.TabIndex = 0;
-            this.btnSalvar.Text = "Registrar";
-            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // panel2
             // 
@@ -411,6 +308,110 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // btnSaida
+            // 
+            this.btnSaida.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaida.Image = global::TechStore.Properties.Resources.logout;
+            this.btnSaida.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSaida.Location = new System.Drawing.Point(477, 9);
+            this.btnSaida.Name = "btnSaida";
+            this.btnSaida.Size = new System.Drawing.Size(66, 65);
+            this.btnSaida.TabIndex = 6;
+            this.btnSaida.Text = "Saídas";
+            this.btnSaida.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSaida.UseVisualStyleBackColor = true;
+            this.btnSaida.Click += new System.EventHandler(this.btnSaida_Click);
+            // 
+            // btnEntrada
+            // 
+            this.btnEntrada.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntrada.Image = global::TechStore.Properties.Resources.login;
+            this.btnEntrada.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEntrada.Location = new System.Drawing.Point(393, 9);
+            this.btnEntrada.Name = "btnEntrada";
+            this.btnEntrada.Size = new System.Drawing.Size(82, 65);
+            this.btnEntrada.TabIndex = 5;
+            this.btnEntrada.Text = "Entradas";
+            this.btnEntrada.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEntrada.UseVisualStyleBackColor = true;
+            this.btnEntrada.Click += new System.EventHandler(this.btnEntrada_Click);
+            // 
+            // btnEstoque
+            // 
+            this.btnEstoque.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstoque.Image = global::TechStore.Properties.Resources.stock;
+            this.btnEstoque.Location = new System.Drawing.Point(317, 9);
+            this.btnEstoque.Name = "btnEstoque";
+            this.btnEstoque.Size = new System.Drawing.Size(74, 65);
+            this.btnEstoque.TabIndex = 4;
+            this.btnEstoque.Text = "Estoque";
+            this.btnEstoque.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEstoque.UseVisualStyleBackColor = true;
+            this.btnEstoque.Click += new System.EventHandler(this.btnEstoque_Click);
+            // 
+            // btnFornecedor
+            // 
+            this.btnFornecedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnFornecedor.Image = global::TechStore.Properties.Resources.add_user;
+            this.btnFornecedor.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnFornecedor.Location = new System.Drawing.Point(151, 9);
+            this.btnFornecedor.Name = "btnFornecedor";
+            this.btnFornecedor.Size = new System.Drawing.Size(92, 65);
+            this.btnFornecedor.TabIndex = 2;
+            this.btnFornecedor.Text = "Fornecedores";
+            this.btnFornecedor.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnFornecedor.UseVisualStyleBackColor = true;
+            this.btnFornecedor.Click += new System.EventHandler(this.btnFornecedor_Click);
+            // 
+            // btnProduto
+            // 
+            this.btnProduto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnProduto.Image = global::TechStore.Properties.Resources.save;
+            this.btnProduto.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnProduto.Location = new System.Drawing.Point(245, 9);
+            this.btnProduto.Name = "btnProduto";
+            this.btnProduto.Size = new System.Drawing.Size(70, 65);
+            this.btnProduto.TabIndex = 3;
+            this.btnProduto.Text = "Produto";
+            this.btnProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnProduto.UseVisualStyleBackColor = true;
+            this.btnProduto.Click += new System.EventHandler(this.btnProduto_Click);
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.Image = global::TechStore.Properties.Resources.delete;
+            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnLimpar.Location = new System.Drawing.Point(80, 9);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(68, 65);
+            this.btnLimpar.TabIndex = 1;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Image = global::TechStore.Properties.Resources.create;
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSalvar.Location = new System.Drawing.Point(9, 9);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(68, 65);
+            this.btnSalvar.TabIndex = 0;
+            this.btnSalvar.Text = "Registrar";
+            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
             // frmCadastroEntrada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -419,6 +420,8 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCadastroEntrada";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar Entrada";

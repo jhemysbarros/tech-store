@@ -107,7 +107,7 @@
             // btnFornecedor
             // 
             this.btnFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFornecedor.Image = ((System.Drawing.Image)(resources.GetObject("btnFornecedor.Image")));
+            this.btnFornecedor.Image = global::TechStore.Properties.Resources.add_user;
             this.btnFornecedor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFornecedor.Location = new System.Drawing.Point(575, 0);
             this.btnFornecedor.Name = "btnFornecedor";
@@ -121,7 +121,7 @@
             // btnSaida
             // 
             this.btnSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaida.Image = ((System.Drawing.Image)(resources.GetObject("btnSaida.Image")));
+            this.btnSaida.Image = global::TechStore.Properties.Resources.logout;
             this.btnSaida.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSaida.Location = new System.Drawing.Point(467, 0);
             this.btnSaida.Name = "btnSaida";
@@ -135,7 +135,7 @@
             // btnEntrada
             // 
             this.btnEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntrada.Image = ((System.Drawing.Image)(resources.GetObject("btnEntrada.Image")));
+            this.btnEntrada.Image = global::TechStore.Properties.Resources.login;
             this.btnEntrada.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEntrada.Location = new System.Drawing.Point(345, 0);
             this.btnEntrada.Name = "btnEntrada";
@@ -149,7 +149,7 @@
             // btnCadastrarProduto
             // 
             this.btnCadastrarProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastrarProduto.Image")));
+            this.btnCadastrarProduto.Image = global::TechStore.Properties.Resources.save;
             this.btnCadastrarProduto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCadastrarProduto.Location = new System.Drawing.Point(228, 0);
             this.btnCadastrarProduto.Name = "btnCadastrarProduto";
@@ -163,7 +163,7 @@
             // btnEstoque
             // 
             this.btnEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstoque.Image = ((System.Drawing.Image)(resources.GetObject("btnEstoque.Image")));
+            this.btnEstoque.Image = global::TechStore.Properties.Resources.stock;
             this.btnEstoque.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEstoque.Location = new System.Drawing.Point(122, 0);
             this.btnEstoque.Name = "btnEstoque";
@@ -177,7 +177,7 @@
             // btnCadastrarEntrada
             // 
             this.btnCadastrarEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarEntrada.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastrarEntrada.Image")));
+            this.btnCadastrarEntrada.Image = global::TechStore.Properties.Resources.create;
             this.btnCadastrarEntrada.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCadastrarEntrada.Location = new System.Drawing.Point(0, 0);
             this.btnCadastrarEntrada.Name = "btnCadastrarEntrada";
@@ -190,7 +190,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::TechStore.Properties.Resources.TechStore;
             this.pictureBox1.Location = new System.Drawing.Point(139, 139);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1074, 516);

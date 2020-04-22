@@ -45,7 +45,7 @@
             this.precoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observacaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.entradaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.entradaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.techStoreDataSet = new TechStore.TechStoreDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBuscarProduto = new System.Windows.Forms.Button();
@@ -54,15 +54,15 @@
             this.btnBuscarId = new System.Windows.Forms.Button();
             this.tbId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.entradaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.entradaTableAdapter = new TechStore.TechStoreDataSetTableAdapters.entradaTableAdapter();
-            this.entradaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntradaEstoque)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.entradaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.entradaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.techStoreDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.entradaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.entradaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,7 +78,7 @@
             // btnLimpar
             // 
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpar.Image")));
+            this.btnLimpar.Image = global::TechStore.Properties.Resources.calcel;
             this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnLimpar.Location = new System.Drawing.Point(81, 2);
             this.btnLimpar.Name = "btnLimpar";
@@ -92,7 +92,7 @@
             // btnExcluir
             // 
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
+            this.btnExcluir.Image = global::TechStore.Properties.Resources.delete;
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnExcluir.Location = new System.Drawing.Point(7, 3);
             this.btnExcluir.Name = "btnExcluir";
@@ -209,10 +209,10 @@
             this.observacaoDataGridViewTextBoxColumn.Name = "observacaoDataGridViewTextBoxColumn";
             this.observacaoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // entradaBindingSource
+            // entradaBindingSource1
             // 
-            this.entradaBindingSource.DataMember = "entrada";
-            this.entradaBindingSource.DataSource = this.techStoreDataSet;
+            this.entradaBindingSource1.DataMember = "entrada";
+            this.entradaBindingSource1.DataSource = this.techStoreDataSet;
             // 
             // techStoreDataSet
             // 
@@ -292,14 +292,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
+            // entradaBindingSource
+            // 
+            this.entradaBindingSource.DataMember = "entrada";
+            this.entradaBindingSource.DataSource = this.techStoreDataSet;
+            // 
             // entradaTableAdapter
             // 
             this.entradaTableAdapter.ClearBeforeFill = true;
-            // 
-            // entradaBindingSource1
-            // 
-            this.entradaBindingSource1.DataMember = "entrada";
-            this.entradaBindingSource1.DataSource = this.techStoreDataSet;
             // 
             // frmEntradaEstoque
             // 
@@ -308,17 +308,19 @@
             this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmEntradaEstoque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relação de Entrada de Estoque";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntradaEstoque)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.entradaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.entradaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.techStoreDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.entradaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.entradaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

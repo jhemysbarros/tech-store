@@ -36,14 +36,18 @@
             this.produtoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imagem = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.produtoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.produtoBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.techStoreDataSet = new TechStore.TechStoreDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.cbCategoria = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.cbBuscaCategoria = new System.Windows.Forms.ComboBox();
             this.produtoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tbPreco = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,28 +58,32 @@
             this.tbId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.btnSelecionarImagem = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbProduto = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.produtoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.produtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriaTableAdapter = new TechStore.TechStoreDataSetTableAdapters.categoriaTableAdapter();
             this.produtoTableAdapter = new TechStore.TechStoreDataSetTableAdapters.produtoTableAdapter();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.techStoreDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             this.panel3.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProduto)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,11 +110,13 @@
             this.produtoDataGridViewTextBoxColumn,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
+            this.imagem,
             this.dataGridViewTextBoxColumn4});
-            this.dgvProduto.DataSource = this.produtoBindingSource2;
+            this.dgvProduto.DataSource = this.produtoBindingSource3;
             this.dgvProduto.Location = new System.Drawing.Point(4, 250);
             this.dgvProduto.Name = "dgvProduto";
             this.dgvProduto.ReadOnly = true;
+            this.dgvProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProduto.Size = new System.Drawing.Size(582, 182);
             this.dgvProduto.TabIndex = 6;
             this.dgvProduto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduto_CellContentClick);
@@ -140,6 +150,13 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
+            // imagem
+            // 
+            this.imagem.DataPropertyName = "imagem";
+            this.imagem.HeaderText = "imagem";
+            this.imagem.Name = "imagem";
+            this.imagem.ReadOnly = true;
+            // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "fk_categoria";
@@ -147,10 +164,10 @@
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
-            // produtoBindingSource2
+            // produtoBindingSource3
             // 
-            this.produtoBindingSource2.DataMember = "produto";
-            this.produtoBindingSource2.DataSource = this.techStoreDataSet;
+            this.produtoBindingSource3.DataMember = "produto";
+            this.produtoBindingSource3.DataSource = this.techStoreDataSet;
             // 
             // techStoreDataSet
             // 
@@ -159,6 +176,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.cbBuscaCategoria);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.cbCategoria);
             this.groupBox1.Controls.Add(this.label5);
@@ -176,6 +196,47 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar produto";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(531, 136);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(45, 23);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Buscar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // cbBuscaCategoria
+            // 
+            this.cbBuscaCategoria.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.produtoBindingSource1, "fk_categoria", true));
+            this.cbBuscaCategoria.DataSource = this.categoriaBindingSource;
+            this.cbBuscaCategoria.DisplayMember = "nome";
+            this.cbBuscaCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBuscaCategoria.Location = new System.Drawing.Point(409, 137);
+            this.cbBuscaCategoria.Name = "cbBuscaCategoria";
+            this.cbBuscaCategoria.Size = new System.Drawing.Size(114, 21);
+            this.cbBuscaCategoria.TabIndex = 11;
+            this.cbBuscaCategoria.ValueMember = "idcategoria";
+            // 
+            // produtoBindingSource1
+            // 
+            this.produtoBindingSource1.DataMember = "produto";
+            this.produtoBindingSource1.DataSource = this.techStoreDataSet;
+            // 
+            // categoriaBindingSource
+            // 
+            this.categoriaBindingSource.DataMember = "categoria";
+            this.categoriaBindingSource.DataSource = this.techStoreDataSet;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(398, 120);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(144, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Buscar produto por categoria";
             // 
             // button1
             // 
@@ -202,16 +263,6 @@
             this.cbCategoria.Size = new System.Drawing.Size(121, 21);
             this.cbCategoria.TabIndex = 4;
             this.cbCategoria.ValueMember = "idcategoria";
-            // 
-            // produtoBindingSource1
-            // 
-            this.produtoBindingSource1.DataMember = "produto";
-            this.produtoBindingSource1.DataSource = this.techStoreDataSet;
-            // 
-            // categoriaBindingSource
-            // 
-            this.categoriaBindingSource.DataMember = "categoria";
-            this.categoriaBindingSource.DataSource = this.techStoreDataSet;
             // 
             // label5
             // 
@@ -289,6 +340,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.btnSelecionarImagem);
             this.panel3.Controls.Add(this.groupBox3);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
@@ -297,21 +349,35 @@
             this.panel3.Size = new System.Drawing.Size(192, 388);
             this.panel3.TabIndex = 5;
             // 
+            // button3
+            // 
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(31, 258);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(128, 35);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Remover Imagem";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // btnSelecionarImagem
             // 
             this.btnSelecionarImagem.Image = ((System.Drawing.Image)(resources.GetObject("btnSelecionarImagem.Image")));
             this.btnSelecionarImagem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelecionarImagem.Location = new System.Drawing.Point(27, 216);
+            this.btnSelecionarImagem.Location = new System.Drawing.Point(25, 216);
             this.btnSelecionarImagem.Name = "btnSelecionarImagem";
             this.btnSelecionarImagem.Size = new System.Drawing.Size(140, 35);
             this.btnSelecionarImagem.TabIndex = 2;
             this.btnSelecionarImagem.Text = "Selecionar Imagem";
             this.btnSelecionarImagem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSelecionarImagem.UseVisualStyleBackColor = true;
+            this.btnSelecionarImagem.Click += new System.EventHandler(this.btnSelecionarImagem_Click);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.pictureBox1);
+            this.groupBox3.Controls.Add(this.pbProduto);
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(186, 207);
@@ -319,13 +385,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Produto";
             // 
-            // pictureBox1
+            // pbProduto
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(6, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(174, 182);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbProduto.Location = new System.Drawing.Point(6, 19);
+            this.pbProduto.Name = "pbProduto";
+            this.pbProduto.Size = new System.Drawing.Size(174, 182);
+            this.pbProduto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbProduto.TabIndex = 0;
+            this.pbProduto.TabStop = false;
             // 
             // panel1
             // 
@@ -343,7 +410,7 @@
             // 
             this.btnAlterar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlterar.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterar.Image")));
+            this.btnAlterar.Image = global::TechStore.Properties.Resources.edit;
             this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAlterar.Location = new System.Drawing.Point(74, 4);
             this.btnAlterar.Name = "btnAlterar";
@@ -358,7 +425,7 @@
             // 
             this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpar.Image")));
+            this.btnLimpar.Image = global::TechStore.Properties.Resources.calcel;
             this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnLimpar.Location = new System.Drawing.Point(214, 4);
             this.btnLimpar.Name = "btnLimpar";
@@ -373,7 +440,7 @@
             // 
             this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
+            this.btnExcluir.Image = global::TechStore.Properties.Resources.delete;
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnExcluir.Location = new System.Drawing.Point(144, 4);
             this.btnExcluir.Name = "btnExcluir";
@@ -388,7 +455,7 @@
             // 
             this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
+            this.btnSalvar.Image = global::TechStore.Properties.Resources.create;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSalvar.Location = new System.Drawing.Point(4, 4);
             this.btnSalvar.Name = "btnSalvar";
@@ -398,6 +465,11 @@
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // produtoBindingSource2
+            // 
+            this.produtoBindingSource2.DataMember = "produto";
+            this.produtoBindingSource2.DataSource = this.techStoreDataSet;
             // 
             // produtoBindingSource
             // 
@@ -411,19 +483,25 @@
             // 
             this.produtoTableAdapter.ClearBeforeFill = true;
             // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
+            // 
             // frmCadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.panel2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCadastroProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar Produto";
             this.Load += new System.EventHandler(this.frmCadastroProduto_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.techStoreDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -431,8 +509,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             this.panel3.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProduto)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -443,7 +522,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnSelecionarImagem;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbProduto;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnExcluir;
@@ -465,14 +544,21 @@
         private TechStoreDataSetTableAdapters.categoriaTableAdapter categoriaTableAdapter;
         private System.Windows.Forms.BindingSource produtoBindingSource1;
         private TechStoreDataSetTableAdapters.produtoTableAdapter produtoTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn produtoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.BindingSource produtoBindingSource2;
         public System.Windows.Forms.TextBox tbId;
         public System.Windows.Forms.TextBox tbProduto;
         public System.Windows.Forms.TextBox tbDescricao;
+        private System.Windows.Forms.ComboBox cbBuscaCategoria;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn produtoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewImageColumn imagem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.BindingSource produtoBindingSource3;
+        private System.Windows.Forms.Button button3;
     }
 }
