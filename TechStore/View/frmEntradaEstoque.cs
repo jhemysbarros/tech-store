@@ -33,12 +33,6 @@ namespace TechStore.View
             Limpar();
         }
 
-        private void dgvEntradaEstoque_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            tbId.Text = dgvEntradaEstoque.CurrentRow.Cells[0].Value.ToString();
-            tbProduto.Text = dgvEntradaEstoque.CurrentRow.Cells[3].Value.ToString();
-        }
-
         private void Excluir(Entrada entrada)
         {
             if (tbId.Text.Trim() == string.Empty)
@@ -72,6 +66,12 @@ namespace TechStore.View
         private void Listar()
         {
             dgvEntradaEstoque.DataSource = entradaController.Listar();
+        }
+
+        private void dgvEntradaEstoque_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tbId.Text = dgvEntradaEstoque.CurrentRow.Cells[0].Value.ToString();
+            tbProduto.Text = dgvEntradaEstoque.CurrentRow.Cells[3].Value.ToString();
         }
     }
 }

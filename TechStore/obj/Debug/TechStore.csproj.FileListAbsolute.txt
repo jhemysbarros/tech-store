@@ -1,6 +1,7 @@
 C:\Users\jhemysbarros\source\repos\TechStore\TechStore\bin\Debug\TechStore.exe.config
 C:\Users\jhemysbarros\source\repos\TechStore\TechStore\bin\Debug\TechStore.exe
 C:\Users\jhemysbarros\source\repos\TechStore\TechStore\bin\Debug\TechStore.pdb
+C:\Users\jhemysbarros\source\repos\TechStore\TechStore\obj\Debug\TechStore.csprojAssemblyReference.cache
 C:\Users\jhemysbarros\source\repos\TechStore\TechStore\obj\Debug\TechStore.View.frmCadastrarCategoria.resources
 C:\Users\jhemysbarros\source\repos\TechStore\TechStore\obj\Debug\TechStore.View.frmCadastrarFuncionario.resources
 C:\Users\jhemysbarros\source\repos\TechStore\TechStore\obj\Debug\TechStore.frmCadastroEntrada.resources
@@ -18,4 +19,3 @@ C:\Users\jhemysbarros\source\repos\TechStore\TechStore\obj\Debug\TechStore.cspro
 C:\Users\jhemysbarros\source\repos\TechStore\TechStore\obj\Debug\TechStore.csproj.CoreCompileInputs.cache
 C:\Users\jhemysbarros\source\repos\TechStore\TechStore\obj\Debug\TechStore.exe
 C:\Users\jhemysbarros\source\repos\TechStore\TechStore\obj\Debug\TechStore.pdb
-C:\Users\jhemysbarros\source\repos\TechStore\TechStore\obj\Debug\TechStore.csprojAssemblyReference.cache

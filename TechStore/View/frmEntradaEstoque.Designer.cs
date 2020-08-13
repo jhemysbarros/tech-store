@@ -137,7 +137,7 @@
             this.dgvEntradaEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEntradaEstoque.Size = new System.Drawing.Size(777, 291);
             this.dgvEntradaEstoque.TabIndex = 1;
-            this.dgvEntradaEstoque.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEntradaEstoque_CellDoubleClick);
+            this.dgvEntradaEstoque.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEntradaEstoque_CellClick);
             // 
             // identradaDataGridViewTextBoxColumn
             // 

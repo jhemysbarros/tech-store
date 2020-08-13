@@ -210,7 +210,7 @@ namespace TechStore.View
             this.Hide();
         }
 
-        private void dgvFornecedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvFornecedor_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             tbId.Text = dgvFornecedor.CurrentRow.Cells[0].Value.ToString();
             tbNome.Text = dgvFornecedor.CurrentRow.Cells[1].Value.ToString();

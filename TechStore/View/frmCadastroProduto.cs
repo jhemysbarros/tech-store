@@ -210,15 +210,6 @@ namespace TechStore.View
             this.Hide();
         }
 
-        private void dgvProduto_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            tbId.Text = dgvProduto.CurrentRow.Cells[0].Value.ToString();
-            tbProduto.Text = dgvProduto.CurrentRow.Cells[1].Value.ToString();
-            tbDescricao.Text = dgvProduto.CurrentRow.Cells[2].Value.ToString();
-            tbPreco.Text = dgvProduto.CurrentRow.Cells[3].Value.ToString();
-            cbCategoria.SelectedValue = dgvProduto.CurrentRow.Cells[5].Value.ToString();
-        }
-
         private void btnSelecionarImagem_Click(object sender, EventArgs e)
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -234,7 +225,16 @@ namespace TechStore.View
         private void button3_Click(object sender, EventArgs e)
         {
             pbProduto.Image.Dispose();
-            pbProduto.Image = null;
+            //pbProduto.Image = null;
+        }
+
+        private void dgvProduto_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tbId.Text = dgvProduto.CurrentRow.Cells[0].Value.ToString();
+            tbProduto.Text = dgvProduto.CurrentRow.Cells[1].Value.ToString();
+            tbDescricao.Text = dgvProduto.CurrentRow.Cells[2].Value.ToString();
+            tbPreco.Text = dgvProduto.CurrentRow.Cells[3].Value.ToString();
+            cbCategoria.SelectedValue = dgvProduto.CurrentRow.Cells[5].Value.ToString();
         }
     }
 }

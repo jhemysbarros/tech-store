@@ -131,17 +131,17 @@ namespace TechStore.View
             this.categoriaTableAdapter.Fill(this.techStoreDataSet.categoria);
         }
 
-        private void dgvCategoria_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            Limpar();
+        }
+
+        private void dgvCategoria_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             tbId.Text = dgvCategoria.CurrentRow.Cells[0].Value.ToString();
             tbCategoria.Text = dgvCategoria.CurrentRow.Cells[1].Value.ToString();
 
             tbBuscarCategoria.Clear();
-        }
-
-        private void btnLimpar_Click(object sender, EventArgs e)
-        {
-            Limpar();
         }
     }
 }

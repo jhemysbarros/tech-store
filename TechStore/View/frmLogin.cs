@@ -10,7 +10,6 @@ namespace TechStore
     public partial class frmLogin : Form
     {
         SqlCommand comando = null;
-        FuncionarioController funcionarioController = new FuncionarioController();
 
         public frmLogin()
         {

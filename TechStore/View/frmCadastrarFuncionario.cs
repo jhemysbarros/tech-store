@@ -169,7 +169,7 @@ namespace TechStore.View
         private void frmCadastrarFuncionario_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'techStoreDataSet.funcionario'. Você pode movê-la ou removê-la conforme necessário.
-            this.funcionarioTableAdapter.Fill(this.techStoreDataSet.funcionario);            
+            this.funcionarioTableAdapter.Fill(this.techStoreDataSet.funcionario);
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -187,7 +187,7 @@ namespace TechStore.View
 
         }
 
-        private void dgvFuncionario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvFuncionario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             tbId.Text = dgvFuncionario.CurrentRow.Cells[0].Value.ToString();
             tbNome.Text = dgvFuncionario.CurrentRow.Cells[1].Value.ToString();
